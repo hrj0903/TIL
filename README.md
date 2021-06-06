@@ -2,4 +2,4 @@
 
 ## HTML
 
-- [html 간단 요약](#./html-간단-요약.md)
+- [html 간단 요약](https://github.com/hrj0903/TIL/blob/main/HTML/html-간단-요약.md)
