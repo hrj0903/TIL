@@ -6,8 +6,8 @@
 
 ## CSS
 
-- [CSS 간단 요약](https://github.com/hrj0903/TIL/blob/main/CSS/css-간단-요약.md)
+- [css 간단 요약](https://github.com/hrj0903/TIL/blob/main/CSS/css-간단-요약.md)
 
 ## JavaScript
 
-- [CSS 간단 요약](https://github.com/hrj0903/TIL/blob/main/CSS/css-간단-요약.md)
+- [javascript 간단 요약](https://github.com/hrj0903/TIL/blob/main/JavaScript/javascript-간단-요약.md)
