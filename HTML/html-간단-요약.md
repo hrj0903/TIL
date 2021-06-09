@@ -88,19 +88,6 @@ element당 하나의 id만을 가질 수 있다. (고유 식별자이며, 중복
 css가 태그를 지정하여 꾸미기 위해서 id가 필요하기 때문이다.
 
 ```html
-<!--시맨틱 태그로 작성한 사례-->
-<body>
-  <header>
-    <h1>The Times</h1>
-  </header>
-  <main>
-    <adress>hello!</adress>
-  </main>
-  <footer>&copy; 2020 N.C</footer>
-</body>
-```
-
-```html
 <!--논 시맨틱 태그로 작성한 사례-->
 <body>
   <div>
@@ -110,6 +97,19 @@ css가 태그를 지정하여 꾸미기 위해서 id가 필요하기 때문이�
     <adress>hello!</adress>
   </div>
   <div>&copy; 2020 N.C</div>
+</body>
+```
+
+```html
+<!--시맨틱 태그로 작성한 사례-->
+<body>
+  <header>
+    <h1>The Times</h1>
+  </header>
+  <main>
+    <adress>hello!</adress>
+  </main>
+  <footer>&copy; 2020 N.C</footer>
 </body>
 ```
 
