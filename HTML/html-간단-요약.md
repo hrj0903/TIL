@@ -24,16 +24,6 @@
 
 tag 사이에 있는 content가 무엇인지를 브라우저에게 알려주는 것이다.
 
-tag에 부가적인 정보 추가하는 것을 attributes(속성)이라고 한다.(href, target, src 등)
-
-self closing tag는 content가 없는 태그로 모든 정보는 attribute를 통해 제공된다.
-
-!DOCTYPE html은 이 문서에 html 코드가 포함되어 있음을 브라우저에 알려준다.
-
-html 문서는 head(문서의 구성(환경설정)), body(문서의 내용)로 구성된다.
-
-meta tag는 문서에 추가 정보를 제공한다.
-
 ```html
 <!DOCTYPE html>
 <!--lang 속성은 검색엔진들에게 우리사이트에서 사용되는 언어를 알려준다.-->
@@ -63,15 +53,15 @@ meta tag는 문서에 추가 정보를 제공한다.
 </html>
 ```
 
-label 태그는 input태그와 함께 작동한다.(label이 input을 activate)
+tag에 부가적인 정보 추가하는 것을 attributes(속성)이라고 한다.(href, target, src 등)
 
-label 태그에 for=“”, input 태그에 id=“”에 똑같은 벨류가 들어가야 한다.
+self closing tag는 content가 없는 태그로 모든 정보는 attribute를 통해 제공된다.
 
-id 속성은 body 안에 어떤 태그에든 넣을 수 있는 attribute임
+!DOCTYPE html은 이 문서에 html 코드가 포함되어 있음을 브라우저에 알려준다.
 
-element당 하나의 id만을 가질 수 있다. (고유 식별자이며, 중복된 id를 사용하면 작동되지 않는다.)
+html 문서는 head(문서의 구성(환경설정)), body(문서의 내용)로 구성된다.
 
-css가 태그를 지정하여 꾸미기 위해서 id가 필요하기 때문이다.
+meta tag는 문서에 추가 정보를 제공한다.
 
 ```html
 <!DOCTYPE html>
@@ -87,13 +77,15 @@ css가 태그를 지정하여 꾸미기 위해서 id가 필요하기 때문이�
 </html>
 ```
 
-div는 box와 같은 기능을 한다. box는 양옆에 올 수 없다.(상하로 컨텐츠가 배열된다.)
+label 태그는 input태그와 함께 작동한다.(label이 input을 activate)
 
-div와 같은 기능을 하지만 의미가 있는 semantic tag로 작성해주는 것이 좋다.
+label 태그에 for=“”, input 태그에 id=“”에 똑같은 벨류가 들어가야 한다.
 
-semantic tag (예시.header,main,footer...)
+id 속성은 body 안에 어떤 태그에든 넣을 수 있는 attribute임
 
-이 태그를 읽는 것만으로 어떤내용을 담고 있는지 이해하기 좋기 때문에 가능한 semantic tag로 작성하는 것이 좋다.
+element당 하나의 id만을 가질 수 있다. (고유 식별자이며, 중복된 id를 사용하면 작동되지 않는다.)
+
+css가 태그를 지정하여 꾸미기 위해서 id가 필요하기 때문이다.
 
 ```html
 <!--시맨틱 태그로 작성한 사례-->
@@ -120,3 +112,11 @@ semantic tag (예시.header,main,footer...)
   <div>&copy; 2020 N.C</div>
 </body>
 ```
+
+div는 box와 같은 기능을 한다. box는 양옆에 올 수 없다.(상하로 컨텐츠가 배열된다.)
+
+div와 같은 기능을 하지만 의미가 있는 semantic tag로 작성해주는 것이 좋다.
+
+semantic tag (예시.header,main,footer...)
+
+이 태그를 읽는 것만으로 어떤내용을 담고 있는지 이해하기 좋기 때문에 가능한 semantic tag로 작성하는 것이 좋다.
