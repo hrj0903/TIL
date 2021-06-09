@@ -20,8 +20,8 @@
 <meta property="og:description" content="Description Here" />
 <meta property="og:site_name" content="Site Name" />
 <meta property="og:locale" content="en_US" />
-<!-- 다음의 태그는 필수는 아니지만, 포함하는 것을 추천함 -->
 
+<!-- 다음의 태그는 필수는 아니지만, 포함하는 것을 추천함 -->
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 ```
