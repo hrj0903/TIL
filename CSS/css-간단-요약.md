@@ -75,37 +75,25 @@ h2 {
 
 inline의 대표적인 태그 span, a, img
 
-```html
-<!DOCTYPE html>
-
-<html lang="ko">
-  <head>
-    <!--href부분에 css파일 경로 적기-->
-    <style>
-      html {
-        background-color: tomato;
-      }
-      body {
-        margin: 20px 5px 12px 9px;
-        background-color: thistle;
-      }
-      div {
-        margin: 20px 50px;
-        height: 150px;
-        width: 150px;
-        background-color: whitesmoke;
-      }
-      span {
-        display: block;
-        background-color: turquoise;
-      }
-    </style>
-  </head>
-  <body>
-    <div></div>
-    <span>hi</span>
-  </body>
-</html>
+```css
+html {
+  background-color: tomato;
+}
+body {
+  /* margin: 0;
+  padding: 20px 10px; */
+  background-color: thistle;
+}
+div {
+  /* margin: 20px 50px; */
+  height: 150px;
+  width: 150px;
+  background-color: whitesmoke;
+}
+span {
+  display: block;
+  background-color: turquoise;
+}
 ```
 
 display를 작성해서 block을 inline, inline을 block으로 바꿀 수 있다.
@@ -114,54 +102,118 @@ block은 높이와 너비가 있고 inline는 높이와 너비가 없다.
 
 즉 block은 box이고 inline은 box가 아니다.
 
+## 5.margin, padding, border, id
+
+```css
+html {
+  background-color: tomato;
+}
+body {
+  margin: 0;
+  padding: 20px 10px;
+  background-color: thistle;
+}
+div {
+  margin: 20px 50px;
+  height: 150px;
+  width: 150px;
+  background-color: whitesmoke;
+}
+span {
+  display: block;
+  background-color: turquoise;
+}
+```
+
 box에는 특징이 3가지가 있다. margin, padding, border.
 
 브라우저는 원치 않아도 기본적으로 style 속성을 준다. user agent stylesheet : 브라우저가 기본적으로 준 style 속성
 
 margin은 box의 border(경계)의 '바깥'에 있는 공간이다.
 
-collapsing margins 현상 : 어느 box의 경계가 다른 box의 경계와 같다면 이 두 box의 margin은 하나로 취급된다.(위, 아래쪽에서만 일어난다.)
+collapsing margins 현상 : 어느 box의 경계가 다른 box의 경계와 같다면 이 두 box의 margin은 하나로 취급된다.(위, 아래쪽에서만 일어난다.) - padding을 사용해서 해결하기
+
+```css
+body {
+  background-color: #ff6446;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  background: #f5dfb3;
+  padding: 20px;
+  width: 230px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.box,
+.box__box {
+  border: 2px solid black;
+}
+
+.box__box {
+  background: #028080;
+  width: 50px;
+  height: 50px;
+  border-color: white;
+}
+
+.box__box--second {
+  border-style: dotted;
+  width: 200px;
+}
+```
 
 padding은 box의 경계로 부터 '안쪽'에 있는 공간이다.
 
+특정 id의 값을 지칭하려면 #id를 이용해 접근한다. 하지만 요즘 class속의 bem작성법으로 인해 잘 쓰지 않는다.
+
 border는 말 그래도 box의 경계이다.
 
-border는 보통 한 종류만 사용한다.
+border는 보통 한 종류만 사용한다.(border: 2px solid black; 너비, 스타일(solid만 주로 사용), 색깔)
 
-적용 예시 → border: 2px solid black; 너비, 스타일, 색깔
+border는 inline과 block 모두에 적용된다.
 
-'\*'는 '전체'를 뜻한다.
-
-border은 inline과 block 모두에 적용된다.
+## 6.class, inline block
 
 padding은 span에 적용 된다.
 
 margin은 inline 속성이므로(높이와 너비가 없다) 좌, 우에만 적용된다.
 
-class는 여러개의 속성들이 공용으로 사용할 수 있는 스타일 형식이고,
-여러 개의 속성에 같은 스타일을 적용하고 싶을 때 사용한다.
+class는 여러개의 속성들이 공용으로 사용할 수 있는 스타일 형식이고, 여러 개의 속성에 같은 스타일을 적용하고 싶을 때 사용한다.
 
-class는 .속성 으로 사용한다.
-
-class는 여러 개를 가질 수 있다.
+class는 .속성 으로 사용할 수 있으며 class는 여러 개를 가질 수 있다.
 
 block은 옆에 아무것도 올 수 없음
 
-ㅡ> inline : wdt, hgt 무시돼서 무언가 추가하지 않는 이상 아무것도 안보임
-ㅡ> inline-block : 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디자인 지원되지 않음(각 기기마다 만족하는 최적값을 일일히 찾아야 함
-예 :10.5 ,10.4 ,10.3, ...... 10.01, ......10.08, 10.05,..10.05!)
+'\*'는 '전체'를 뜻한다.
 
-ㅡ> 이 문제를 해결할 수 있는게 flex
+```css
+* {
+  //작성하고 싶은 property와 value값 적기
+}
+```
 
-inline block의 문제점을 해결하기 위해 flexblock를 생각해냈다.
-flexbox 사용 규칙
+inline : width, height 무시돼서 무언가 추가하지 않는 이상 아무것도 안보임
+inline-block : 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디자인 지원되지 않음(각 기기마다 만족하는 최적값을 일일히 찾아야 함, 그래서 잘 사용하지 않음)
+이 문제를 해결할 수 있는게 flex
 
-1. 자식 엘리먼트에는 어떤 것도 적지 말아야 함.
-   자식 엘리먼트를 움직이게 하려면 부모 엘리먼트를 flex container로 만들어야 한다.
-2. align-items : cross axis에서 작용 (세로)
-3. justify-content : main axis에서 작용 (가로) (디폴트)
-   flex-container가 height를 가지고 있지 않으면 align-items를 사용하더라도 위치가 바뀌지 않음.
-   vh = viewport height (스크린에 따라 다름)
+## 7.flexbox
+
+inline block의 문제점을 해결하기 위해 등장한 flexbox.
+
+### flexbox 사용 규칙
+
+- 자식 엘리먼트에는 어떤 것도 적지 말아야 함. 자식 엘리먼트를 움직이게 하려면 부모 엘리먼트를 flex container로 만들어야 한다.
+  - justify-content : main axis에서 작용 (가로) (디폴트)
+  - align-items : cross axis에서 작용 (세로)
+- flex-container가 height를 가지고 있지 않으면 align-items를 사용하더라도 위치가 바뀌지 않음. -> vh사용 = viewport height (스크린에 따라 다름)
 
 - justify-content나 align-items의 default를 변경하기 위해선, 'flex-direction'을 수정하면 된다.
 - flex-direction에는 두 가지 속성, column과 row가 있다.
