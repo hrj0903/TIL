@@ -80,12 +80,9 @@ html {
   background-color: tomato;
 }
 body {
-  /* margin: 0;
-  padding: 20px 10px; */
   background-color: thistle;
 }
 div {
-  /* margin: 20px 50px; */
   height: 150px;
   width: 150px;
   background-color: whitesmoke;
@@ -105,23 +102,30 @@ block은 높이와 너비가 있고 inline는 높이와 너비가 없다.
 ## 5.margin, padding, border, id
 
 ```css
-html {
-  background-color: tomato;
-}
+/* * {
+  
+} */
 body {
+  background-color: #ff6446;
+  height: 100vh;
   margin: 0;
-  padding: 20px 10px;
-  background-color: thistle;
 }
-div {
-  margin: 20px 50px;
-  height: 150px;
-  width: 150px;
-  background-color: whitesmoke;
+#box {
+  background: #f5dfb3;
+  padding: 20px;
+  width: 230px;
+  height: 230px;
+  border: 2px solid black;
 }
-span {
-  display: block;
-  background-color: turquoise;
+
+.box__box {
+  background: #028080;
+  width: 50px;
+  height: 50px;
+}
+
+.box__box--second {
+  width: 200px;
 }
 ```
 
@@ -132,6 +136,20 @@ box에는 특징이 3가지가 있다. margin, padding, border.
 margin은 box의 border(경계)의 '바깥'에 있는 공간이다.
 
 collapsing margins 현상 : 어느 box의 경계가 다른 box의 경계와 같다면 이 두 box의 margin은 하나로 취급된다.(위, 아래쪽에서만 일어난다.) - padding을 사용해서 해결하기
+
+padding은 box의 경계로 부터 '안쪽'에 있는 공간이다.
+
+특정 id의 값을 지칭하려면 #id를 이용해 접근한다. 하지만 요즘 class속의 bem작성법으로 인해 잘 쓰지 않는다.
+
+border는 말 그래도 box의 경계이다.
+
+border는 보통 한 종류만 사용한다.(border: 2px solid black; 너비, 스타일(solid만 주로 사용), 색깔)
+
+border는 inline과 block 모두에 적용된다.
+
+'\*'는 '전체'를 뜻한다.
+
+## 6.class, inline block, flex-box
 
 ```css
 body {
@@ -152,6 +170,7 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
 .box,
 .box__box {
   border: 2px solid black;
@@ -170,18 +189,6 @@ body {
 }
 ```
 
-padding은 box의 경계로 부터 '안쪽'에 있는 공간이다.
-
-특정 id의 값을 지칭하려면 #id를 이용해 접근한다. 하지만 요즘 class속의 bem작성법으로 인해 잘 쓰지 않는다.
-
-border는 말 그래도 box의 경계이다.
-
-border는 보통 한 종류만 사용한다.(border: 2px solid black; 너비, 스타일(solid만 주로 사용), 색깔)
-
-border는 inline과 block 모두에 적용된다.
-
-## 6.class, inline block
-
 padding은 span에 적용 된다.
 
 margin은 inline 속성이므로(높이와 너비가 없다) 좌, 우에만 적용된다.
@@ -192,32 +199,23 @@ class는 .속성 으로 사용할 수 있으며 class는 여러 개를 가질 �
 
 block은 옆에 아무것도 올 수 없음
 
-'\*'는 '전체'를 뜻한다.
-
-```css
-* {
-  //작성하고 싶은 property와 value값 적기
-}
-```
-
 inline : width, height 무시돼서 무언가 추가하지 않는 이상 아무것도 안보임
+
 inline-block : 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디자인 지원되지 않음(각 기기마다 만족하는 최적값을 일일히 찾아야 함, 그래서 잘 사용하지 않음)
-이 문제를 해결할 수 있는게 flex
 
-## 7.flexbox
-
-inline block의 문제점을 해결하기 위해 등장한 flexbox.
+이 문제를 해결할 수 있는게 flexbox
 
 ### flexbox 사용 규칙
 
 - 자식 엘리먼트에는 어떤 것도 적지 말아야 함. 자식 엘리먼트를 움직이게 하려면 부모 엘리먼트를 flex container로 만들어야 한다.
   - justify-content : main axis에서 작용 (가로) (디폴트)
   - align-items : cross axis에서 작용 (세로)
-- flex-container가 height를 가지고 있지 않으면 align-items를 사용하더라도 위치가 바뀌지 않음. -> vh사용 = viewport height (스크린에 따라 다름)
+- flex-container가 height를 가지고 있지 않으면 align-items를 사용하더라도 위치가 바뀌지 않음.
+  -vh사용 = viewport height (스크린에 따라 다름)
 
-- justify-content나 align-items의 default를 변경하기 위해선, 'flex-direction'을 수정하면 된다.
 - flex-direction에는 두 가지 속성, column과 row가 있다.
-- display를 flex로 했을 때 default는 row이다. 따라서 flex-direction: column;을 주면 주축과 교차축이 반전된다.
+  - justify-content나 align-items의 default를 변경하기 위해선, 'flex-direction'을 수정하면 된다.
+  - display를 flex로 했을 때 default는 row이다. 따라서 flex-direction: column;을 주면 주축과 교차축이 반전된다.
 - 원하는만큼 flex 부모-자식 엘리먼트를 만들어낼 수 있다.
 - flex-wrap: nowrap;을 통해 wrapping이 일어나지 않게 할 수 있다.
 - flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
