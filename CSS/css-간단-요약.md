@@ -189,19 +189,19 @@ body {
 }
 ```
 
-padding은 span에 적용 된다.
+inline속성인 태그들은 padding은 전부 적용된다.
 
-margin은 inline 속성이므로(높이와 너비가 없다) 좌, 우에만 적용된다.
+하지만 inline속성은 높이와 너비가 없이 때문에 margin은 좌우에만 적용된다.
 
 class는 여러개의 속성들이 공용으로 사용할 수 있는 스타일 형식이고, 여러 개의 속성에 같은 스타일을 적용하고 싶을 때 사용한다.
 
 class는 .속성 으로 사용할 수 있으며 class는 여러 개를 가질 수 있다.
 
-block은 옆에 아무것도 올 수 없음
+inline: width, height 무시돼서 무언가 추가하지 않는 이상 아무것도 안보임
 
-inline : width, height 무시돼서 무언가 추가하지 않는 이상 아무것도 안보임
+block: 옆에 아무것도 올 수 없음
 
-inline-block : 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디자인 지원되지 않음(각 기기마다 만족하는 최적값을 일일히 찾아야 함, 그래서 잘 사용하지 않음)
+inline-block: 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디자인 지원되지 않음(각 기기마다 만족하는 최적값을 일일히 찾아야 함, 그래서 잘 사용하지 않음)
 
 이 문제를 해결할 수 있는게 flexbox
 
@@ -217,7 +217,7 @@ inline-block : 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 �
   - justify-content나 align-items의 default를 변경하기 위해선, 'flex-direction'을 수정하면 된다.
   - display를 flex로 했을 때 default는 row이다. 따라서 flex-direction: column;을 주면 주축과 교차축이 반전된다.
 - 원하는만큼 flex 부모-자식 엘리먼트를 만들어낼 수 있다.
-- flex-wrap: nowrap;을 통해 wrapping이 일어나지 않게 할 수 있다.
-- flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
+- flex-wrap: wrap;을 사용하면 가능한 영역 내에서 벗어나지 않고 여러행으로 나누어 표현 할 함.
+  -flex-wrap: nowrap;을 사용하면 flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
 - flex-direction: column-reverse; 밑에서 시작해서 위로 올라가게 한다.(마찬가지로 row-reverse도 있다.)
 - flex-wrap: wrap-reverse; 또한 있는데, 브라우저를 줄일 때, 엘리먼트가 겹쳐지는 위치가 역전된다.
