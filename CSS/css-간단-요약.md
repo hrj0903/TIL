@@ -218,6 +218,6 @@ inline-block: 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디
   - display를 flex로 했을 때 default는 row이다. 따라서 flex-direction: column;을 주면 주축과 교차축이 반전된다.
 - 원하는만큼 flex 부모-자식 엘리먼트를 만들어낼 수 있다.
 - flex-wrap: wrap;을 사용하면 가능한 영역 내에서 벗어나지 않고 여러행으로 나누어 표현 할 함.
-  -flex-wrap: nowrap;을 사용하면 flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
+  - flex-wrap: nowrap;을 사용하면 flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
 - flex-direction: column-reverse; 밑에서 시작해서 위로 올라가게 한다.(마찬가지로 row-reverse도 있다.)
 - flex-wrap: wrap-reverse; 또한 있는데, 브라우저를 줄일 때, 엘리먼트가 겹쳐지는 위치가 역전된다.
