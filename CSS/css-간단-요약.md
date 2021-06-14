@@ -221,3 +221,99 @@ inline-block: 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디
   - flex-wrap: nowrap;을 사용하면 flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
 - flex-direction: column-reverse; 밑에서 시작해서 위로 올라가게 한다.(마찬가지로 row-reverse도 있다.)
 - flex-wrap: wrap-reverse; 또한 있는데, 브라우저를 줄일 때, 엘리먼트가 겹쳐지는 위치가 역전된다.
+
+## 7.position
+
+position default는 static이다.
+
+- fixed
+
+  - element가 처음 생성된 자리에 고정.
+
+  - position fixed를 이용하면 스크롤해도 항상 제자리에 머무른다.
+
+  - top, left, right, bottom 중 하나만 수정해도 서로 다른 레이어에 위치하게되어 원래 위치가 무시된다.
+
+- relative
+
+  - element가 '처음 생성된 위치'를 기준점으로, top bottom left right으로 위치를 조금씩 수정할 수 있다.
+
+- absolute
+
+  - 가장 가까운 relative 부모를 기준으로 이동, position:relative; 를 해주면 부모가 된다. 없으면 body.
+
+## 8.pseudo selectors
+
+좀더 세부적으로 엘리먼트를 선택해 주는 것!
+(기존 방법 : 태그, id w/#, class w/.)
+
+```css
+/* pseudo selector */
+div:last-child {
+  background-color: teal;
+}
+/* id나 class를 따로 만드는것보다 이렇게 지정하는게 훨씬 좋은 방법이다.
+css에서만 선택을 하면 되니까! html코드를 고칠 필요가 없기 때문이다. */
+
+/* n번째 태그 수정하기 nth-child(n) */
+span:nth-child(2) {
+  background-color: teal;
+}
+
+/* even은 짝수! 짝수번째를 모두 바꿀 수 있다. */
+span:nth-child(even) {
+  //or odd ( 홀수 )
+  background-color: teal;
+}
+
+/* n을 사용해서 적용할 수 있다. */
+span:nth-child(5n + 1) {
+  background-color: silver;
+}
+```
+
+- attribute selector
+
+  - tag[attribute = "value"] : 속성의 값이 "value"인 태그를 모두적용
+
+  - tag[attribute ~= "value"] : 앞뒤에 공백이 있는 상태에서 "value" 값을 포함한 모든 tag 적용
+
+  - tag[attribute *= "value"] : 앞뒤 공백 상관없이 "value" 값을 포함한 모든 tag 적용
+
+  - tag: required {}: required 속성을 가지고있는 tag 적용
+
+## 9.combinators
+
+```css
+div span {
+  text-decoration: underline;
+}
+```
+
+이렇게하면 div밑에 있는 모든 span이 효과를 가진다.
+
+```css
+div > span {
+  text-decoration: underline;
+}
+```
+
+이렇게하면 바로 밑을 찾게 되므로 바로 밑의 자식만 건들일수있게된다.
+
+```css
+p + span {
+  color: black;
+}
+```
+
++를 사용하면 형제에게 영향을 끼칠 수 있다.
+
+- '>'를 사용하면 direct child를 찾고, '+'를 사용하면 바로 코드상 밑에 있는 sibling을 찾게된다.
+
+```css
+p ~ span {
+  color: tomato;
+}
+```
+
+span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
