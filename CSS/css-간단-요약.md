@@ -280,6 +280,10 @@ span:nth-child(5n + 1) {
 
   - tag[attribute *= "value"] : 앞뒤 공백 상관없이 "value" 값을 포함한 모든 tag 적용
 
+  - tag[attribute $= "value"]{}: 끝에 "value"가 오는 tag 선택
+
+  - tag[attribute ^= "value"]{}: 앞에 "value"가 오는 tag 선택
+
   - tag: required {}: required 속성을 가지고있는 tag 적용
 
 ## 9.combinators
@@ -317,3 +321,85 @@ p ~ span {
 ```
 
 span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
+
+## 10.states
+
+> :Active, :hover, :focus, :focus-within, :visited
+
+- :active
+
+  - 해당 요소를 마우스로 클릭했을 때 효과를 적용
+
+- :hover
+
+  - 마우스가 해당 요소 위를 지나갈 때 효과를 적용
+
+- :focus
+
+  - 키보드로 선택되었을 때 효과를 적용
+
+- :focus-within
+
+  - 부모 요소에게 적용. 자신의 자식 요소 중 하나가 focused되었을 때 효과를 적용
+
+- :visited
+  - 방문한 사이트일 경우에 효과를 적용
+
+조건을 나열해 여러 상황을 설정할 수 있음.
+
+```css
+예) high-tag:hover low-tag:focus {
+}
+```
+
+상위 요소위에 마우스 커서가 있고, 하위 요소가 focused되었을 때 효과를 적용하게 된다. and 의 개념으로 이해하면 됨.
+
+### pseudo element
+
+- ::placeholder
+  - placehoder만을 꾸밀때 사용
+- ::selection
+- 드래그 했을때 적용
+- ::first-letter
+  - 앞 글자에 적용
+- ::first-line
+  - 첫 줄에 적용
+
+## 11.colors and variables
+
+- color system
+
+  - 1)hexadecimal color (16진수 컬러)
+    - #000000
+  - 2)RGB 방식 (이건 디자이너들이 많이씀.)
+    - rgba (205,23,0, 0.5); 4번째 숫자는 투명도를 말한다 !
+
+- custom properties(variable 역할을 해줌)
+
+  :root 라는 엘리먼트에 변수를 추가하는 것이다
+  :root는 기본적으로 모든 document의 뿌리가 되는 것이다
+
+  ```css
+  :root {
+    --main-color: #000000;
+  }
+  ```
+
+  --main-color라고 변수이름을 주고 이것을 document의 root에 저장하는것이다
+
+  --를 써주고 변수이름을 써줘야한다 변수는 -- 2개 그리고 변수이름 빈공간이 있다면 -로 채워야한다.
+
+  물론 컬러만 저장할 수 있는게 아니다.
+
+  --default-border: 1px solde var(--main-color);
+
+  그 다음 이 변수를 사용할 곳에 사용해 주면 된다.
+
+  ```css
+  p {
+    background-color: var(--main-color);
+  }
+  a {
+    background-color: var(--main-color);
+  }
+  ```
