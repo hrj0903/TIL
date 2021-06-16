@@ -120,3 +120,7 @@ div와 같은 기능을 하지만 의미가 있는 semantic tag로 작성해주�
 semantic tag (예시.header,main,footer...)
 
 이 태그를 읽는 것만으로 어떤내용을 담고 있는지 이해하기 좋기 때문에 가능한 semantic tag로 작성하는 것이 좋다.
+
+## 메인 페이지를 index.html로 정하는 이유
+
+대부분의 웹 서버가 디폴트로 index.html을 찾아보도록 설정되어 있기 때문
