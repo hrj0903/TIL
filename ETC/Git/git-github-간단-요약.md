@@ -43,10 +43,12 @@
 ## Github desktop
 
 - 초보자가 Github를 사용하는 가장 좋은 방법
-- 문서 또는 데스크탑 바탕화면에 저장소를 만드는 걸 추천(쉽게 찾기 하기 위해서).
+- 문서 또는 데스크탑 바탕화면에 저장소를 만드는 걸 추천(쉽게 찾기 하기 위해서)
 - Github desktop을 이용해서 github에 commit 하는 방법
   - vsc에서 코드를 작성/수정한다.
   - 코드를 저장한다.
   - github desktop에서 파일을 commit 한다(commit 제목 작성 꼭 해줄 것)
   - github desktop에서 파일을 push 한다.
   - github를 새로고침해 확인해준다.
+- .DS_Store는 맥os나 윈도우에서 만든 보이지 않는 임시파일이다.
+- .gitignore는 무시하고 싶은 파일 이름을 기록하는 파일이다.
