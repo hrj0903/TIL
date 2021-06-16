@@ -403,3 +403,11 @@ span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
     background-color: var(--main-color);
   }
   ```
+
+## web font
+
+- link 보다 import를 추천한다.
+- import위치는 제일 상단
+- body에 font-family 추가
+- 모든 폰트를 추가하면 웹사이트 무거워진다.
+  [Google Fonts](https://fonts.google.com/)
