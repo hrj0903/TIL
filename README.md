@@ -15,6 +15,8 @@
 
 - [css hack](https://github.com/hrj0903/TIL/blob/main/CSS/css-hack.md)
 
+- [reset css](https://github.com/hrj0903/TIL/blob/main/CSS/reset-css.md)
+
 ## JavaScript
 
 - [javascript 간단 요약](https://github.com/hrj0903/TIL/blob/main/JavaScript/javascript-간단-요약.md)
