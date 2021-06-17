@@ -343,7 +343,22 @@ span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
   - 부모 요소에게 적용. 자신의 자식 요소 중 하나가 focused되었을 때 효과를 적용
 
 - :visited
-  - 방문한 사이트일 경우에 효과를 적용
+
+  - 방문한 사이트일 경우에 효과를 적용.
+
+- :not
+
+  - 이 것을 제외한 나머지에 적용하고 싶어요.
+  - #login-form input 에도 똑같이 쓰면 중복적용됩니다. not쪽에만 써야함
+
+  ```css
+  /* input type이 submit이 아닐때 코드 내용 실행 */
+
+  #login-form input:not([type="submit"]) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease-in-out;
+  }
+  ```
 
 조건을 나열해 여러 상황을 설정할 수 있음.
 
@@ -411,3 +426,12 @@ span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
 - body에 font-family 추가
 - 모든 폰트를 추가하면 웹사이트 무거워진다.
   [Google Fonts](https://fonts.google.com/)
+- styles.css 파일에는 font-family와 같이 모든 스크린에 적용될 수 있는 스타일을 써놓는다.
+  - ( or 모든 스크린의 background-color) 이는 하나의 방식이고, 자신만의 편한 방식을 택하면 된다.
+
+## 팁: 네비게이션 바 하단에 고정하기
+
+position: fixed
+bottom: 0
+width:100%
+box-sizing: border-box
