@@ -68,7 +68,7 @@ meta tag는 문서에 추가 정보를 제공한다.
 <html>
   <head> </head>
   <body>
-    <form>
+    <form action="" method="">
       <label for="website">website</label>
       <input id="website" required type="date" />
       <input type="submit" value="Create Account" />
@@ -77,15 +77,22 @@ meta tag는 문서에 추가 정보를 제공한다.
 </html>
 ```
 
-label 태그는 input태그와 함께 작동한다.(label이 input을 activate)
+- label 태그는 input태그와 함께 작동한다.(label이 input을 activate)
 
-label 태그에 for=“”, input 태그에 id=“”에 똑같은 벨류가 들어가야 한다.
+- label 태그에 for=“”, input 태그에 id=“”에 똑같은 벨류가 들어가야 한다.
 
-id 속성은 body 안에 어떤 태그에든 넣을 수 있는 attribute임
+- id 속성은 body 안에 어떤 태그에든 넣을 수 있는 attribute임
 
-element당 하나의 id만을 가질 수 있다. (고유 식별자이며, 중복된 id를 사용하면 작동되지 않는다.)
+- element당 하나의 id만을 가질 수 있다. (고유 식별자이며, 중복된 id를 사용하면 작동되지 않는다.)
 
-css가 태그를 지정하여 꾸미기 위해서 id가 필요하기 때문이다.
+- css가 태그를 지정하여 꾸미기 위해서 id가 필요하기 때문이다.
+
+- form은 중요한 2가지 속성(attribute)을 가지고 있다. 하나는 action이고, 다른 하나는 method이다.
+- action은 어떤 페이지로 data를 보낼건지 지정할 수 있다.
+- action에 적어 놓은 URL에 해당하는 파일이 반드시 존재해야한다.
+- method는 2가지 방식 중 하나를 쓸 수 있다. 하나는 POST이고, 다른 하나는 GET이다.
+- POST는 백엔드 서버에 정보를 전송하는 방식.
+- GET 방식은 보안에 취약하다. username이랑 password를 GET 방식으로 보내선 안된다. URL에 포함되어도 상관없는 정보들을 GET 방식으로 보내는 것이다.
 
 ```html
 <!--논 시맨틱 태그로 작성한 사례-->
@@ -120,6 +127,43 @@ div와 같은 기능을 하지만 의미가 있는 semantic tag로 작성해주�
 semantic tag (예시.header,main,footer...)
 
 이 태그를 읽는 것만으로 어떤내용을 담고 있는지 이해하기 좋기 때문에 가능한 semantic tag로 작성하는 것이 좋다.
+
+```html
+<nav class="nav">
+  <ul class="nav__list">
+    <li class="nav__btn">
+      <a class="nav__link" href="friends.html">
+        <i class="fa-solid fa-user fa-2x"></i>
+      </a>
+    </li>
+    <li class="nav__btn">
+      <a class="nav__link" href="chats.html">
+        <span class="nav__notification badge">1</span>
+        <i class="fa-regular fa-comment fa-2x"></i>
+      </a>
+    </li>
+    <li class="nav__btn">
+      <a class="nav__link" href="find.html">
+        <i class="fas fa-search fa-2x"></i>
+      </a>
+    </li>
+    <li class="nav__btn">
+      <a class="nav__link" href="more.html">
+        <span class="point"></span>
+        <i class="fa-solid fa-ellipsis fa-2x"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+```
+
+- navigation 안의 ul 안에 많은 li들로 구성되는데, 검색엔진 구글도 navigation을 찾아서 ul의 li 안에 있는 link를 가져오게끔 설정되어 있다.
+- VSC의 단축키로 navigation에서 하위메뉴까지 한번에 자동 완성 시킬 수 있다.
+  - nav>il>li\*(필요한 갯수)>a
+  - 그 후 #과 tab만으로 간편하게 작성이 가능하다.(수정하다보면 다음 tab이 옳게 먹히지 않는다.)
+- 점 3개는 ellipsis라고 한다.
+- 속성과 class 이름이 똑같아도 상관없다.
+- 메인 styles.css에 다른 요소의 css를 import 할 때, 순서를 지키는 것이 정말 중요하다.
 
 ## 메인 페이지를 index.html로 정하는 이유
 
