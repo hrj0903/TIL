@@ -435,3 +435,15 @@ position: fixed
 bottom: 0
 width:100%
 box-sizing: border-box
+
+## box-sizing
+
+200px 크기의 box에 50px의 padding을 원할 경우, padding : 50px, width : 200px 로 입력하지만,
+
+이렇게 하면 CSS에서는 padding을 50px 주고, 200px의 box width는 유지하려 하므로,
+
+총 크기 250px의 box를 가지게 된다.
+
+box-sizing : border-box 를 입력할 경우, padding을 입력해도 box사이즈를 신경쓰지 않는다는 의미이다.
+
+따라서, 처음에 원했던 50 padding, 150 box 를 가지게 된다. 즉 contents 자리가 작아지더라도 박스의 크기를 키우지 않는다.
