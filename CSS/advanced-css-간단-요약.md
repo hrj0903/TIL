@@ -39,6 +39,16 @@ div:hover {
 - transform과 transition을 조합하면 더 역동적인 애니메이션을 만들 수 있다.
 - CSS 3D는 GPU로 돌아가므로, 3D 작업을 할 수 있다.
 
+### 속성들 간략하게 요약
+
+```css
+.controls__btns button:active {
+  transform: scale(0.98);
+}
+```
+
+버튼을 누를때마다 0.98배 확대
+
 ## animations
 
 애니메이션 만들기
