@@ -447,3 +447,15 @@ box-sizing: border-box
 box-sizing : border-box 를 입력할 경우, padding을 입력해도 box사이즈를 신경쓰지 않는다는 의미이다.
 
 따라서, 처음에 원했던 50 padding, 150 box 를 가지게 된다. 즉 contents 자리가 작아지더라도 박스의 크기를 키우지 않는다.
+
+## 몰랐던 속성들을 간략하게 요약.
+
+- text-transform: uppercase;
+  - text를 대문자로
+- box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11);
+  - box 그림자 만들기
+- all: unset;
+- button, input 등 스타일을 적용하기 위해서 각 브라우저 마다
+  기본으로 적용되어 있는 style을 초기화 시키고 새로운 style을 적용한다.
+- cursor: pointer;
+  - 손가락 모양 (클릭 가능한 버튼)
