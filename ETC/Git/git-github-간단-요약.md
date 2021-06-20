@@ -64,3 +64,23 @@ Git을 사용하면 main 브랜치와 함께 커밋에서 다른 프로젝트를
 분기를 만들고 병합 할 수 있습니다.
 
 변경 사항을 적용하지 않으면 이 모든 것이 작동하지 않습니다.
+
+## Github 정적 페이지 만들기
+
+특별한 이름을 가진 특별한 브랜치가 있다면, GitHub는 무료로 정적 호스팅을 제공합니다
+
+-> "gh-pages" -정적 호스팅 : 정적 웹 사이트를 무료로 업로드 할 수 있으며 GitHub에서 무료로 URL을 제공합니다.
+
+-정적 웹 사이트 : html, css 및 js (프런트 엔드 포함) 만있는 웹 사이트-백엔드에서는 작동하지 않습니다.
+
+private repository인 경우 공개 웹 사이트를 가질 수 없습니다.
+
+gh-pages 브랜치를 게시 한 후 저장소로 이동하여 환경> 배포보기에서 github-pages를 확인합니다.
+
+URL : username.github.io/theNameOfYourRepository
+
+### 페이지 업데이트 하기!
+
+1. main branch로 이동
+2. main branch에서 변경사항을 commit하고 push
+3. gh-pages branch로 가서 update from main 클릭하고 push.
