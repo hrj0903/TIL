@@ -168,3 +168,10 @@ semantic tag (예시.header,main,footer...)
 ## 메인 페이지를 index.html로 정하는 이유
 
 대부분의 웹 서버가 디폴트로 index.html을 찾아보도록 설정되어 있기 때문
+
+## 간략한 태그 요약
+
+- <canvas></canvas>
+  - canvas는 html5의 요소, 안에 있는 픽셀들을 다룸
+  - css에서 width와 height를 줌
+  - javascript에서도 이용됨
