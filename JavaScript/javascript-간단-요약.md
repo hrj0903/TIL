@@ -4,6 +4,20 @@
 
 동적(Interactivity)인 웹사이트를 만들기 위해 필요한 프로그래밍 언어이다.
 
+## variables
+
+const는 변하지 않는값을 만들때, let은 변하는 값을 만들때 var은 절대 쓰지 않기.
+
+const와 let은 block scope고 var은 function scope임
+
+즉 block안에 있는 것을 밖에서 접근 안됨. 안에서 밖은 가능
+
+## functions
+
+arrow function은 this랑 scope관련해서 사용하지 않기. 적용안됨
+
+this랑 scope는 function(){}사용하기
+
 ## 속성들
 
 clientX,Y는 윈도우 전체의 범위내에서 마우스 위치값
