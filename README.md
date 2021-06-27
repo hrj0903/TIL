@@ -1,5 +1,10 @@
 # Today I Learned
 
+## 웹개발자가 알아야 할 지식
+
+- [웹은 어떻게 작동하는가](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/웹은_어떻게_작동하는가.md)
+- [커맨드라인 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/커맨드라인_기초.md)
+
 ## HTML
 
 - [html 간단 요약](https://github.com/hrj0903/TIL/blob/main/HTML/html-간단-요약.md)
