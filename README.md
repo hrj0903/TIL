@@ -4,7 +4,7 @@
 
 - [웹은 어떻게 작동하는가](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/웹은_어떻게_작동하는가.md)
 - [커맨드라인 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/커맨드라인_기초.md)
-- [git의 개념기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/git의-개념기초.md)
+- [git의 개념 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/git의-개념기초.md)
 - [프론트엔드 개념](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/프론트엔드-개념.md)
 
 ## HTML
