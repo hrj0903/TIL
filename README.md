@@ -6,6 +6,11 @@
 - [커맨드라인 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/커맨드라인_기초.md)
 - [git의 개념 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/git의-개념기초.md)
 - [프론트엔드 개념](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/프론트엔드-개념.md)
+- [html css 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/html-css-기초.md)
+- [개발자도구 알아야할 정보](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/개발자도구-알아야할-정보.md)
+- [자바스크립트 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/자바스크립트-기초.md)
+- [문제해결](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/문제해결.md)
+- [에러이해](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/에러이해.md)
 
 ## HTML
 
