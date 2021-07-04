@@ -11,6 +11,7 @@
 - [자바스크립트 기초](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/자바스크립트-기초.md)
 - [문제해결](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/문제해결.md)
 - [에러이해](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/에러이해.md)
+- [DOM 조작](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/DOM-조작.md)
 
 ## HTML
 
