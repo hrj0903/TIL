@@ -12,6 +12,7 @@
 - [문제해결](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/문제해결.md)
 - [에러이해](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/에러이해.md)
 - [DOM 조작](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/DOM-조작.md)
+- [백엔드란](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/백엔드란.md)
 
 ## HTML
 
