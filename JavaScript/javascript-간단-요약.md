@@ -4,6 +4,105 @@
 
 동적(Interactivity)인 웹사이트를 만들기 위해 필요한 프로그래밍 언어이다.
 
+JAVASCRIPT TYPES
+
+---
+
+1. Number
+2. String
+3. Boolean
+4. Undefined
+5. Null
+<!-- 6. Symbol (new in ECMAScript 6) -->
+6. Object
+
+## JAVASCRIPT COMPARISONS
+
+# !==
+
+> =
+> <=
+>
+> <
+
+## JAVASCRIPT VARIABLES
+
+var
+
+<!-- let (new in ECMAScript 6)-->
+<!-- const (new in ECMAScript 6)-->
+
+## JAVASCRIPT CONDITIONALS
+
+if
+else
+else if
+
+<!-- ternary operator -->
+<!-- switch -->
+
+## JAVASCRIPT LOGICAL OPERATORS
+
+&&
+||
+!
+
+## JAVASCRIPT FUNCTIONS
+
+var a = function name() {}
+function name() {}
+return
+
+<!-- () => (new in ECMAScript 6) -->
+
+## JAVASCRIPT DATA STRUCTURES
+
+Array
+Object
+
+## JAVASCRIPT LOOPING
+
+for
+while
+do
+forEach (new in ECMAScript 5)
+
+## JAVASCRIPT KEYWORDS
+
+break
+case
+catch
+class
+const
+continue
+debugger
+default
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if
+import
+in
+instanceof
+new
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield
+
 ## variables
 
 const는 변하지 않는값을 만들때, let은 변하는 값을 만들때 var은 절대 쓰지 않기.
