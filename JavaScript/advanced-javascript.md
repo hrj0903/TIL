@@ -51,3 +51,13 @@ if (true) {
 }
 alert(a); // 5
 ```
+
+# How Does Javascript Work?
+
+- asynchronous vs synchronous
+  - javascript is a single threaded language that can be non-blocking??
+    - 자바스크립트는 first in last out임.
+- what is a program
+  - allocate memory
+  - parse and execute
+    -v8은 memory heap와 call stack 두가지로 구성되어 있다.
