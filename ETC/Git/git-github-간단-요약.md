@@ -84,3 +84,22 @@ URL : username.github.io/theNameOfYourRepository
 1. main branch로 이동
 2. main branch에서 변경사항을 commit하고 push
 3. gh-pages branch로 가서 update from main 클릭하고 push.
+
+## git workflow
+
+- 때때로 당신은 다른 개발자나 팀 동료가 수행한 업데이트를 놓치지 않도록 main을 가져오고 분기에 main을 병합하려고 합니다.
+  당신의 feature이 끝나면 git push 및 해당 pull 요청을 수행하여 pull 요청을 만듭니다.
+
+  의견을 추가하면 사람들이 파일 변경 사항을 검토하고 몇 가지 변경 사항을 원하면 다시 git add, git commit 마지막으로 변경 사항을 적용한 다음 pull 요청을 병합할 수 있습니다. 팀.
+  이제 새로운 메인이 있으므로 팀의 다른 모든 사람들도 git pull을 수행해야 합니다.
+
+  (every once in a while you want to pull main and merge main into your branch to make sure you're not missing out on any updates that other developers or team mates have done.
+
+  once you're done with your feature you make a pull request by doing git push and that pull request.
+
+  You'll add coments and people will review your file changes and if they want you make a few changes then you can do again git add, git commit finally make your changes and then you can merge pull request and once that's done then everybody else on the team.
+
+  there's now a new main so everybody else on the team should do git pull as well.)
+
+- Q: 뭔가를 커밋한 후와 PR을 만들기 전에 매번 병합을 수행하는 것이 좋습니까?
+  - A: 팀의 워크플로에 따라 다릅니다. 일반적으로 변경 사항이 안정적이고 프로덕션 준비가 된 경우에만 변경 사항을 병합합니다. 기능을 개발하는 한 개발 프로세스가 완료되고 모든 것이 테스트될 때까지 별도의 분기에 보관합니다. 마스터 브랜치에 항상 PR을 할 필요는 없습니다. 사용 가능한 모든 지점에 PR을 할 수 있습니다.
