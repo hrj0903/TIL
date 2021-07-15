@@ -42,3 +42,9 @@
 - [git github 간단 요약](https://github.com/hrj0903/TIL/blob/main/ETC/Git/git-github-간단-요약.md)
 
 - [vsc-단축키](https://github.com/hrj0903/TIL/blob/main/ETC/vsc-단축키.md)
+
+## 프로젝트 만들시
+
+- [알아야 할것](https://github.com/hrj0903/TIL/blob/main/프로젝트_만들시/알아야-할것.md)
+
+- [강의 효율적으로 듣는법](https://github.com/hrj0903/TIL/blob/main/프로젝트_만들시/강의-효율적으로-듣는법.md)
