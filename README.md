@@ -1,5 +1,9 @@
 # Today I Learned
 
+## 공부법
+
+- [온라인 강의 효율적으로 듣는법](https://github.com/hrj0903/TIL/blob/main/공부법/온라인-강의-효율적으로-듣는법.md)
+
 ## 웹개발자가 알아야 할 지식
 
 - [웹은 어떻게 작동하는가](https://github.com/hrj0903/TIL/blob/main/웹개발자가_알아야_할_지식/웹은_어떻게_작동하는가.md)
