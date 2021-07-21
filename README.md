@@ -3,6 +3,7 @@
 ## 공부법
 
 - [온라인 강의 효율적으로 듣는법](https://github.com/hrj0903/TIL/blob/main/공부법/온라인-강의-효율적으로-듣는법.md)
+- [프론트엔드-포트폴리오 준비법](https://github.com/hrj0903/TIL/blob/main/공부법/프론트엔드-포트폴리오-준비법.md)
 
 ## 웹개발자가 알아야 할 지식
 
