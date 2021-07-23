@@ -148,3 +148,6 @@ offset은 내가 적용하고자 하는 내에서의 마우스 위치값
 
 - 웹 브라우저에는 'document object'를 표시하기 위해 무엇을 표시할지 지정하는 'documnet' property를 가지고 있는 'window object'가 있으며, 'document object'는 HTML과 CSS를 읽은 다음 JavaScript 엔진(구글 크롬에서는 V-8 엔진)과 같은 것으로 한 줄씩 JavaScript를 읽습니다. 그리고 무엇이든 변경해야 하는 경우 JavaScript는 문서 객체와 대화하고 HTML 및 CSS를 수정할 수 있습니다.
 - 앞에 아무것도 없이 메소드 써서 실행되면 window object를 쓴거임 (ex. alert()는 사실 window.alert()에서 window가 생략 된 거임.)
+
+- 변수
+  - 변수를 선언하면 데이터를 담을 수 잇는 공간이 할당이 되고 변수명이 할당된 공간을 가리킨다. 숫자나 string, boolean null undefined같은 경우에는 데이터 단위가 작기 때문에 메모리에 들어오지만 object 같은 경우에는 objcet가 따로 할당이 어딘가에 되어있고 이 object를 가리키고 있는 reference가 메모리에 들어가 있다. 변수를 다른 변수에 할당하거나 전달할때 변수 안에 들어있는 값이 복사되어서 가는데 object같은 경우에는 reference가 복사되어서 전달된다. object를 통해 무언가를 변경할때 reference를 변경하는 것은 안되지만 object가 가리키는 데이터는 업데이트 될 수 있다.
