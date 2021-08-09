@@ -175,3 +175,40 @@ semantic tag (예시.header,main,footer...)
   - canvas는 html5의 요소, 안에 있는 픽셀들을 다룸
   - css에서 width와 height를 줌
   - javascript에서도 이용됨
+
+# html data
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Attributes</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes -->
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        margin-bottom: 50px;
+      }
+
+      div[data-display-name='dream'] {
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-index="1" data-display-name="dream"></div>
+    <div data-index="2" data-display-name="coding"></div>
+    <span data-index="1" data-display-name="dream">sdfsdf</span>
+    <script>
+      const dream = document.querySelector('div[data-display-name="dream"]');
+      console.log(dream.dataset);
+      console.log(dream.dataset.displayName);
+      console.log(dream.dataset.index);
+    </script>
+  </body>
+</html>
+```
