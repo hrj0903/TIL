@@ -438,24 +438,6 @@ box-sizing: border-box
 
 ## box-sizing
 
-200px 크기의 box에 50px의 padding을 원할 경우, padding : 50px, width : 200px 로 입력하지만,
+박스를 우리가 스타일링 할 때 박스 사이즈의 width와 height을 지정할 때 박스 사이징을 content-box로 지정하게 되면 컨텐츠 자체의 width와 height을 결정하기 때문에 우리가 패딩을 얼마나 넣든 보더를 얼마를 넣든 컨테이너 사이즈는 변경되지 않습니다 100x100 그대로 유지
 
-이렇게 하면 CSS에서는 padding을 50px 주고, 200px의 box width는 유지하려 하므로,
-
-총 크기 250px의 box를 가지게 된다.
-
-box-sizing : border-box 를 입력할 경우, padding을 입력해도 box사이즈를 신경쓰지 않는다는 의미이다.
-
-따라서, 처음에 원했던 50 padding, 150 box 를 가지게 된다. 즉 contents 자리가 작아지더라도 박스의 크기를 키우지 않는다.
-
-## 몰랐던 속성들을 간략하게 요약.
-
-- text-transform: uppercase;
-  - text를 대문자로
-- box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11);
-  - box 그림자 만들기
-- all: unset;
-- button, input 등 스타일을 적용하기 위해서 각 브라우저 마다
-  기본으로 적용되어 있는 style을 초기화 시키고 새로운 style을 적용한다.
-- cursor: pointer;
-  - 손가락 모양 (클릭 가능한 버튼)
+박스를 스타일링 할 때 박스 사이징을 border-box로 만들게 되면 보더까지 포함하도록 만들게되면 width와 height을 100x100으로 지정했을 때 패딩과 보더를 넣은만큼 컨텐트가 작아지는 것을 말함. 그리고 우리가 통상적으로 패딩을 넣는다는 것은 박스 안에 여백을 만드는 것이기 때문에 대부분은 보더박스를 이용해서 사용하게 됨.
