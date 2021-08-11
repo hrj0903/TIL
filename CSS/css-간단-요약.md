@@ -354,7 +354,7 @@ span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
   ```css
   /* input type이 submit이 아닐때 코드 내용 실행 */
 
-  #login-form input:not([type="submit"]) {
+  #login-form input:not([type='submit']) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     transition: border-color 0.3s ease-in-out;
   }
@@ -441,3 +441,7 @@ box-sizing: border-box
 박스를 우리가 스타일링 할 때 박스 사이즈의 width와 height을 지정할 때 박스 사이징을 content-box로 지정하게 되면 컨텐츠 자체의 width와 height을 결정하기 때문에 우리가 패딩을 얼마나 넣든 보더를 얼마를 넣든 컨테이너 사이즈는 변경되지 않습니다 100x100 그대로 유지
 
 박스를 스타일링 할 때 박스 사이징을 border-box로 만들게 되면 보더까지 포함하도록 만들게되면 width와 height을 100x100으로 지정했을 때 패딩과 보더를 넣은만큼 컨텐트가 작아지는 것을 말함. 그리고 우리가 통상적으로 패딩을 넣는다는 것은 박스 안에 여백을 만드는 것이기 때문에 대부분은 보더박스를 이용해서 사용하게 됨.
+
+## Absolute vs Static
+
+포지션의 기본값은 스태틱이고 스태틱을 했을 때는 top left 이런 포지션 관련된 속성을 써도 아무런 상관이 없고 릴레이티브는 원래 있던 공간은 유지하면서 공간에서 상대적으로 우리가 명시한 top left 이런 값들에 해당 만큼 옮겨가는 것 앱솔루트는 근접한 부모중에 스태틱이 아닌 부모의 기존에 우리가 지정한 값대로 옮겨가는 것
