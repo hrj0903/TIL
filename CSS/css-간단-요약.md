@@ -452,3 +452,10 @@ box-sizing: border-box
 sticky는 바로 포지션이 이동하는 것이 아니라 그 자리에 있다가 스크롤링에 따라 지정된 포지션에 유지
 포지션이 absolute이게 되면 들어있는 근접한 부모 박스들 중에 static 아닌 박스에 위치변경
 fixed면 들어 있는 박스랑 상관없이 그냥 viewport 즉 브라우저에서 보여주는 뷰포트에서 포지션변경
+
+## 중앙정렬
+
+- margin: auto,
+- text-align: center,
+- translate(50%, 50%),
+- (text-align: center, line-height: parents height;)
