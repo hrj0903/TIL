@@ -459,3 +459,10 @@ fixed면 들어 있는 박스랑 상관없이 그냥 viewport 즉 브라우저�
 - text-align: center,
 - translate(50%, 50%),
 - (text-align: center, line-height: parents height;)
+
+## 반응형 백그라운드
+
+```css
+background: center/cover no-repeat
+  url('https://media.swncdn.com/cms/BST/67912-gettyimages-817147678-kieferpix.1200w.tn.webp');
+```
