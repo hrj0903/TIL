@@ -466,3 +466,27 @@ fixed면 들어 있는 박스랑 상관없이 그냥 viewport 즉 브라우저�
 background: center/cover no-repeat
   url('https://media.swncdn.com/cms/BST/67912-gettyimages-817147678-kieferpix.1200w.tn.webp');
 ```
+
+## transformation
+
+```css
+.box1 {
+  transform: translateX(100px);
+}
+
+.box2 {
+  transform: translate(-50px, -20px);
+}
+
+.box3 {
+  transform: scale(1.2);
+}
+
+.box4 {
+  transform: rotate(45deg);
+}
+
+.box5 {
+  transform: translate(100px, 100px) scale(2) rotate(46deg);
+}
+```
