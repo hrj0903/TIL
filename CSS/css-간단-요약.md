@@ -490,3 +490,32 @@ background: center/cover no-repeat
   transform: translate(100px, 100px) scale(2) rotate(46deg);
 }
 ```
+
+## animation
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: pink;
+}
+
+.box1:hover {
+  background-color: blueviolet;
+  transition: background-color 300ms linear;
+}
+
+.box2:hover {
+  border-radius: 50%;
+  background-color: cornflowerblue;
+  transition: all 2s ease;
+}
+
+.box3:hover {
+  border-radius: 50%;
+  transform: translateX(400px);
+  background-color: cornflowerblue;
+  transition: all 3s ease;
+}
+```
