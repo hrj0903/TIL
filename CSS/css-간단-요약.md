@@ -519,3 +519,32 @@ background: center/cover no-repeat
   transition: all 3s ease;
 }
 ```
+
+## variable
+
+```css
+:root {
+  --background-color: thistle;
+  --text-color: whitesmoke;
+  --base: 8px;
+}
+.first-list {
+  background-color: var(--background-color);
+  color: var(--text-color, red);
+  margin-left: var(--base);
+}
+
+.second-list {
+  background-color: var(--background-color);
+  color: var(--text-color, red);
+  margin-left: calc(var(--base) * 2);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --background-color: salmon;
+    --text-color: whitesmoke;
+    --base: 4px;
+  }
+}
+```
