@@ -55,6 +55,7 @@
 - [vsc-단축키](https://github.com/hrj0903/TIL/blob/main/ETC/vsc-단축키.md)
 
 - [웹도메인 만드는법](https://github.com/hrj0903/TIL/blob/main/ETC/웹도메인-만드는법.md)
+- [터미널 명령어](https://github.com/hrj0903/TIL/blob/main/ETC/터미널-명령어.md)
 
 ## 프로젝트 만들시
 
