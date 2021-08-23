@@ -152,6 +152,57 @@ offset은 내가 적용하고자 하는 내에서의 마우스 위치값
 - 변수
   - 변수를 선언하면 데이터를 담을 수 잇는 공간이 할당이 되고 변수명이 할당된 공간을 가리킨다. 숫자나 string, boolean null undefined같은 경우에는 데이터 단위가 작기 때문에 메모리에 들어오지만 object 같은 경우에는 objcet가 따로 할당이 어딘가에 되어있고 이 object를 가리키고 있는 reference가 메모리에 들어가 있다. 변수를 다른 변수에 할당하거나 전달할때 변수 안에 들어있는 값이 복사되어서 가는데 object같은 경우에는 reference가 복사되어서 전달된다. object를 통해 무언가를 변경할때 reference를 변경하는 것은 안되지만 object가 가리키는 데이터는 업데이트 될 수 있다.
 
+## Looping
+
+```js
+const items = [1, 2, 3, 4, 5, 6];
+
+// ❌ Bad Code 💩
+function getAllEvens(items) {
+  const result = [];
+  for (let i = 0; i < items.length; i++) {
+    if (items[i] % 2 === 0) {
+      result.push(items[i]);
+    }
+  }
+  return result;
+}
+
+function multiplyByFour(items) {
+  const result = [];
+  for (let i = 0; i < items.length; i++) {
+    result.push(items[i] * 4);
+  }
+  return result;
+}
+
+function sumArray(items) {
+  let sum = 0;
+  for (let i = 0; i < items.length; i++) {
+    sum += items[i];
+  }
+  return sum;
+}
+
+const evens = getAllEvens(items);
+const multiple = multiplyByFour(evens);
+const sum = sumArray(multiple);
+console.log(sum);
+
+// ✅ Good Code ✨
+const evens = items.filter((num) => num % 2 === 0);
+const multiple = evens.map((num) => num * 4);
+const sum = multiple.reduce((a, b) => a + b, 0);
+console.log(sum);
+
+// ✅ Good Code ✨
+const result = items
+  .filter((num) => num % 2 === 0)
+  .map((num) => num * 4)
+  .reduce((a, b) => a + b, 0);
+console.log(result);
+```
+
 ## Promise -> Async/await
 
 ```javascript
