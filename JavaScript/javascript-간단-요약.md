@@ -152,6 +152,199 @@ offset은 내가 적용하고자 하는 내에서의 마우스 위치값
 - 변수
   - 변수를 선언하면 데이터를 담을 수 잇는 공간이 할당이 되고 변수명이 할당된 공간을 가리킨다. 숫자나 string, boolean null undefined같은 경우에는 데이터 단위가 작기 때문에 메모리에 들어오지만 object 같은 경우에는 objcet가 따로 할당이 어딘가에 되어있고 이 object를 가리키고 있는 reference가 메모리에 들어가 있다. 변수를 다른 변수에 할당하거나 전달할때 변수 안에 들어있는 값이 복사되어서 가는데 object같은 경우에는 reference가 복사되어서 전달된다. object를 통해 무언가를 변경할때 reference를 변경하는 것은 안되지만 object가 가리키는 데이터는 업데이트 될 수 있다.
 
+## es6
+
+```js
+//es6
+/**
+ * Shorthand property names
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer
+ *
+ */
+
+{
+  const ellie1 = {
+    name: 'Ellie',
+    age: '18',
+  };
+
+  const name = 'Ellie';
+  const age = '18';
+
+  // 💩
+  const ellie2 = {
+    name: name,
+    age: age,
+  };
+
+  // ✨
+  const ellie3 = {
+    name,
+    age,
+  };
+
+  console.log(ellie1, ellie2, ellie3);
+  console.clear();
+}
+
+/**
+ * Destructuring Assignment
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+ *
+ */
+{
+  // object
+  const student = {
+    name: 'Anna',
+    level: 1,
+  };
+
+  // 💩
+  {
+    const name = student.name;
+    const level = student.level;
+    console.log(name, level);
+  }
+
+  // ✨
+  {
+    const { name, level } = student;
+    console.log(name, level);
+
+    const { name: studentName, level: studentLevel } = student;
+    console.log(studentName, studentLevel);
+  }
+
+  // array
+  const animals = ['🐶', '😽'];
+
+  // 💩
+  {
+    const first = animals[0];
+    const second = animals[1];
+    console.log(first, second);
+  }
+
+  // ✨
+  {
+    const [first, second] = animals;
+    console.log(first, second);
+  }
+  console.clear();
+}
+
+/**
+ * Spread Syntax
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+ * 스프레드 연산자는 오브젝트 안에 들어있는 것을 복사해오는 것을 아니라 주소의 참조값만 복사해서 오기 때문에
+ * 원래의 오브젝트를 변경하게 되면 전부다 영향을 주기 때문에 이점을 유의 하면서 코딩을 해야함! */
+{
+  const obj1 = { key: 'key1' };
+  const obj2 = { key: 'key2' };
+  const array = [obj1, obj2];
+
+  // array copy
+  const arrayCopy = [...array];
+  console.log(array, arrayCopy);
+
+  const arrayCopy2 = [...array, { key: 'key3' }];
+  obj1.key = 'newKey';
+  console.log(array, arrayCopy, arrayCopy2);
+
+  // object copy
+  const obj3 = { ...obj1 };
+  console.log(obj3);
+
+  // array concatenation
+  const fruits1 = ['🍑', '🍓'];
+  const fruits2 = ['🍌', '🥝'];
+  const fruits = [...fruits1, ...fruits2];
+  console.log(fruits);
+
+  // object merge
+  // 동일한 키를 가지고 있는 오브젝트인 경우에는 제일 마지막에 오는 아이가 최종적으로 값을 덮어 씌움.
+  const dog1 = { dog: '🐕' };
+  const dog2 = { dog: '🐶' };
+  const dog = { ...dog1, ...dog2 };
+  console.log(dog);
+  console.clear();
+}
+
+/**
+ * Default parameters
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Default_parameters
+ */
+{
+  // 💩
+  {
+    function printMessage(message) {
+      if (message == null) {
+        message = 'default message';
+      }
+      console.log(message);
+    }
+
+    printMessage('hello');
+    printMessage();
+  }
+
+  // ✨
+  {
+    function printMessage(message = 'default message') {
+      console.log(message);
+    }
+
+    printMessage('hello');
+    printMessage();
+  }
+  console.clear();
+}
+
+/**
+ * Ternary Operator
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+ */
+{
+  const isCat = true;
+  // 💩
+  {
+    let component;
+    if (isCat) {
+      component = '😸';
+    } else {
+      component = '🐶';
+    }
+    console.log(component);
+  }
+
+  // ✨
+  {
+    const component = isCat ? '😸' : '🐶';
+    console.log(component);
+    console.log(isCat ? '😸' : '🐶');
+  }
+  console.clear();
+}
+
+/**
+ * Template Literals
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals
+ */
+{
+  const weather = '🌤';
+  const temparature = '16°C';
+
+  // 💩
+  console.log(
+    'Today weather is ' + weather + ' and temparature is ' + temparature + '.'
+  );
+
+  // ✨
+
+  console.log(`Today weather is ${weather} and temparature is ${temparature}.`);
+}
+```
+
 ## Ternary Operator
 
 ```js
