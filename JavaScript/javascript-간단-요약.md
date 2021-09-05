@@ -152,6 +152,58 @@ offset은 내가 적용하고자 하는 내에서의 마우스 위치값
 - 변수
   - 변수를 선언하면 데이터를 담을 수 잇는 공간이 할당이 되고 변수명이 할당된 공간을 가리킨다. 숫자나 string, boolean null undefined같은 경우에는 데이터 단위가 작기 때문에 메모리에 들어오지만 object 같은 경우에는 objcet가 따로 할당이 어딘가에 되어있고 이 object를 가리키고 있는 reference가 메모리에 들어가 있다. 변수를 다른 변수에 할당하거나 전달할때 변수 안에 들어있는 값이 복사되어서 가는데 object같은 경우에는 reference가 복사되어서 전달된다. object를 통해 무언가를 변경할때 reference를 변경하는 것은 안되지만 object가 가리키는 데이터는 업데이트 될 수 있다.
 
+## async
+
+```js
+function fetchUser() {
+    // do network request in 10 seconds...
+    return 'ellie';
+}
+
+const user = fetchUser();
+console.log(user);
+
+// 자바스크립트는 매우 똑똑한 녀석이라 동기적으로 실행이 되는데
+예를들어 위의 함수처럼 네트워크 요청을 10초동안 받아오는 함수가
+있다면 동기로 처리되기 때문에 fetchUser함수가 끝날때까지 기다려야
+하는 현상을 유발시킵니다.
+만약, 이 함수 뒤에 브라우저 UI를 나타내야 하는 중요한 코드들이
+기다리고 있다면 어떻게 될까요?
+브라우저는 fetchUser함수가 끝나길 기다리고 끝날때에서야
+비로소 다음 코드들이 실행되는 것을 알 수 있습니다.
+하나의 함수 때문에 모든 코드들이 실행될 수 없는 것이죠.
+이렇게 요청이 긴 함수들은 반드시 비동기로 빼둬야 합니다.
+
+저번 강의에서 이것을 이렇게 Promise로 해결할 수 있었습니다.
+function fetchUser() {
+   // do network request in 10 seconds...
+   return new Promise((resolve, reject) => {
+       // do network request in 10 seconds...
+          resolve('ellie');
+   })
+}
+
+const user = fetchUser();
+user.then(console.log);
+console.log(user);
+
+이번 강의에서는 async 하나로 가볍게 해결하는 방법을 보여드리겠습니다.
+async function fetchUser() {
+    // do network request in 10 seconds...
+    return 'ellie';
+}
+
+const user = fetchUser();
+user.then(console.log);
+console.log(user);
+
+// 이렇게 하면 자동적으로 함수 안에 있는 코드 블럭들이 자동적으로
+Promise로 변환이 됩니다.
+마치 async 한 단어면 귀찮게 Promise 작업을 해줬던 것들이 알아서
+생성해주는 것이다.
+// ㄹㅇ 갓갓
+```
+
 ## 연산자
 
 ```js
