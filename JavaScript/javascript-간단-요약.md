@@ -204,6 +204,54 @@ Promise로 변환이 됩니다.
 // ㄹㅇ 갓갓
 ```
 
+## await
+
+```js
+function getBanana() {
+    return delay(3000)
+    .then(() => '🍌');
+}
+async function pickFruits() {
+    const apple = await getApple();
+    const banana = await getBanana();
+    return `${apple} + ${banana}`;
+}
+
+// 마치 동기식처럼 코드를 작성해도 비동기식으로 작동하며
+코드도 상당히 간결해지는 것을 볼 수 있습니다.
+만약 에러가 발생한다면 async await에서는 이렇게 처리할 수 있습니다.
+
+async function pickFruits() {
+    try {
+    const apple = await getApple();
+    const banana = await getBanana();
+    return `${apple} + ${banana}`;
+    } catch {
+    } finally {
+    }
+}
+// Promise에서 then은 async await에서 try와 흡사하며
+catch와 finally는 async await에서 catch / finally와 똑같다.
+하지만 이 코드에도 문제점은 있는데 await로 getApple()함수를
+3초 기다리고 그 뒤에 getBanana()함수를 또 3초 기다린다는 것이다.
+둘은 별개이므로 사실 서로 기다려줄 필요가 없는데 말이다.
+위의 식을 해결하기 위해 아래처럼 코드를 짜볼 수도 있다.
+
+async function pickFruits() {
+   const applePromise = getApple();
+   const bananaPromise = getBanana();
+   const apple = await applePromise;
+   const banana = await bananaPromise;
+   return `${apple} + ${banana}`;
+}
+// 이렇게 하면 애플 함수와 바나나함수가 동시에 실행되고
+실행되자마자 Promise객체를 생성하기 때문에
+마치 병렬적으로 실행되게 됩니다.
+그런데 사실 이렇게 동시다발적으로 병렬적으로 실행되는 경우에는
+이렇게 사용하지 않고 밑의 코드처럼 아주 좋은 Promise api를
+사용하게 됩니다.
+```
+
 ## 연산자
 
 ```js
