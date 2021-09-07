@@ -252,6 +252,28 @@ async function pickFruits() {
 사용하게 됩니다.
 ```
 
+### useful APIs
+
+```js
+function pickAllFruits() {
+    return Promise.all([getApple(), getBanana()]).then(
+        fruits => fruits.join(' + ')
+    );
+}
+pickAllFruits().then(console.log);
+
+// 이것은 Promise 배열을 전달하게 되면 모든 Promise들을
+병렬적으로 다 받을때까지 모아주는 역할을 합니다.
+
+function pickOnlyOne() {
+    return Promise.race([getApple(), getBanana()]);
+}
+pickOnlyOne().then(console.log);
+// 이것은 Promise 배열 중 가장빨리 실행되는 하나의 Promise만
+받습니다.
+// 사과를 2초 바나나는 1초일때 바나나가 나옴.
+```
+
 ## 연산자
 
 ```js
