@@ -152,6 +152,83 @@ offset은 내가 적용하고자 하는 내에서의 마우스 위치값
 - 변수
   - 변수를 선언하면 데이터를 담을 수 잇는 공간이 할당이 되고 변수명이 할당된 공간을 가리킨다. 숫자나 string, boolean null undefined같은 경우에는 데이터 단위가 작기 때문에 메모리에 들어오지만 object 같은 경우에는 objcet가 따로 할당이 어딘가에 되어있고 이 object를 가리키고 있는 reference가 메모리에 들어가 있다. 변수를 다른 변수에 할당하거나 전달할때 변수 안에 들어있는 값이 복사되어서 가는데 object같은 경우에는 reference가 복사되어서 전달된다. object를 통해 무언가를 변경할때 reference를 변경하는 것은 안되지만 object가 가리키는 데이터는 업데이트 될 수 있다.
 
+## json
+
+```js
+let json = JSON.stringify(true);
+console.log(json);
+
+json = JSON.stringify(['apple', 'banana']);
+console.log(json);
+
+const rabbit = {
+  name: 'tori',
+  color: 'white',
+  size: null,
+  birthDate: new Date(),
+	//symbol: Symbol('id'),
+  jump: function () {
+    console.log(`${this.name} can jump!`);
+  },
+};
+
+json = JSON.stringify(rabbit);
+console.log(json);
+
+json = JSON.stringify(rabbit, ['name', 'color', 'size']);
+console.log(json);
+
+json = JSON.stringify(rabbit, (key, value) => {
+  console.log(`key: ${key}, value: ${value}`);
+  return key === 'name' ? 'ellie' : value;
+});
+console.log(json);
+
+result
+
+true
+["apple", "banana"]
+{"name":"tory", "color":"white", "size":null, "birthDate":"2020-05-
+29T13:20:22.670Z"}
+{"name":"tory", "color":"white"}
+{"name":"ellie", "color":"white", "size":null, "birthDate":"2020-05-
+29T13:20:22.670Z"}
+// jump 메서드는 json에 포함되지 않았다.
+// 또한 자바스크립트에만 존재하는 Symbol API 등은 변환되지 않음.
+
+// 1번과 이어집니다.
+console.clear();
+json = JSON.stringify(rabbit);
+console.log(json);
+const obj = JSON.parse(json, (key, value) => {
+  console.log(`key: ${key}, value: ${value}`);
+  return key === 'birthDate' ? new Date(value) : value;
+});
+console.log(obj);
+rabbit.jump();
+// obj.jump();
+
+console.log(rabbit.birthDate.getDate());
+console.log(obj.birthDate.getDate());
+
+result
+ {"name":"tory", "color":"white", "size":null, "birthDate":"2020-05-
+29T13:20:22.670Z"}
+can jump!
+Error
+Error
+ 29
+ 29
+// Object가 JSON으로 Serialize할 때 메서드는 데이터가 아님으로
+// 포함되지 않기 때문에 마찬가지로 Deserialize해도 jump()메서드가
+// 존재하지 않음
+// rabbit의 birthDate.getDate는 Date객체의 API를 사용했지만
+// obj의 birthDate.getDate는 Deserialize할 때 그저 String으로
+// 변환되었기 때문에. getDate를 사용해도 에러가 발생함!
+// 하지만 Deserialize를 할 때 콜백함수에서 세부조정을 함으로써
+// obj도 getDate()메서드를 사용할 수가 있게 됩니다.
+```
+
 ## async
 
 ```js
