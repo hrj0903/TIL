@@ -189,6 +189,18 @@ result['🍎, 🥝, 🍌, 🍒'][
 ];
 ```
 
+## Reverse
+
+```js
+const array = [1, 2, 3, 4, 5];
+const result = array.reverse();
+console.log(result);
+console.log(array);
+
+result[(5, 4, 3, 2, 1)][(5, 4, 3, 2, 1)];
+// 원래 있던 array 배열도 reverse된 모습이다.
+```
+
 ## json
 
 ```js
