@@ -201,6 +201,35 @@ result[(5, 4, 3, 2, 1)][(5, 4, 3, 2, 1)];
 // 원래 있던 array 배열도 reverse된 모습이다.
 ```
 
+## Slice
+
+```js
+const array = [1, 2, 3, 4, 5];
+const result = array.splice(1, 2);
+console.log(result);
+console.log(array);
+
+result[(1, 2)][
+  // Splice는 return값이 존재하기 때문에 return값에서 삭제한 인덱스들을 볼 수 있음
+  (3, 4, 5)
+];
+// 삭제되고 남은 배열이다.
+// 즉, splice는 배열 자체를 수정할 때 사용합니다.
+
+const array = [1, 2, 3, 4, 5];
+const result = array.slice(2, 5);
+console.log(result);
+console.log(array);
+
+result[(3, 4, 5)][
+  // Splice와 다르게 새로운 배열 result를 만듭니다.
+  // 2 부터 5까지가 아닌 2번 인덱스부터 4번 인덱스까지 들어있는 배열을 반환합니다.
+  (1, 2, 3, 4, 5)
+];
+// 기존 배열은 그대로 남아있다.
+// 즉, slice는 배열에서 원하는 부분만 받아오고 싶을 때 사용하는 api입니다.
+```
+
 ## json
 
 ```js
