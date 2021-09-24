@@ -230,6 +230,13 @@ result[(3, 4, 5)][
 // 즉, slice는 배열에서 원하는 부분만 받아오고 싶을 때 사용하는 api입니다.
 ```
 
+## find
+
+```js
+const result = students.find((student) => student.score === 90);
+console.log(result);
+```
+
 ## json
 
 ```js
