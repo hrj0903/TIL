@@ -237,6 +237,13 @@ const result = students.find((student) => student.score === 90);
 console.log(result);
 ```
 
+## filter
+
+```js
+const result = students.filter((student) => student.enrolled);
+console.log(result);
+```
+
 ## json
 
 ```js
