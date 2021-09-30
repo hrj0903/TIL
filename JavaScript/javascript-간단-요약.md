@@ -244,6 +244,13 @@ const result = students.filter((student) => student.enrolled);
 console.log(result);
 ```
 
+## map
+
+```js
+const result = students.map((student) => student.score);
+console.log(result);
+```
+
 ## json
 
 ```js
