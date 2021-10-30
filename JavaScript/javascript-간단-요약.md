@@ -251,6 +251,26 @@ const result = students.map((student) => student.score);
 console.log(result);
 ```
 
+## some
+
+```js
+const result = students.some((student) => student.score <= 90);
+console.log(result);
+// true;
+// 배열에서 들어있는 요소들 중 하나라도 조건을 만족하면 true를 반환합니다.(some)
+// 배열 중에 어떤 것이라도 하나 만족되는 것이 있는지 없는지를 확인하고 싶다면 some
+```
+
+## every
+
+```js
+const result2 = students.every((student) => student.score <= 90);
+console, log(result);
+// false;
+// 배열에서 들어있는 모든 요소들이 조건을 만족하면 true를 반환하고 하나라도 false이면 false를 반환합니다.
+// 모든 배열이 조건을 만족해야된다면 every를 사용합시다.
+```
+
 ## json
 
 ```js
