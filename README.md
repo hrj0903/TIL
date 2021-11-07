@@ -37,6 +37,8 @@
 
 - [reset css](https://github.com/hrj0903/TIL/blob/main/CSS/reset-css.md)
 
+- [fixed와 sticky의 차이](https://github.com/hrj0903/TIL/blob/main/CSS/fixed와-sticky의-차이.md)
+
 ## JavaScript
 
 - [javascript](https://github.com/hrj0903/TIL/blob/main/JavaScript/javascript)
