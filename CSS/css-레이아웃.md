@@ -10,8 +10,8 @@
 > - static(default)
 > - fixed
 
-    	- 스크롤 해도 제자리에 위치
-    	- top, left, right, bottom 중 하나만 수정해도 서로 다른 레이어에 위치하게되어 원래 위치 무시. 가장 위에 위치.
+    - 스크롤 해도 제자리에 위치
+    - top, left, right, bottom 중 하나만 수정해도 서로 다른 레이어에 위치하게되어 원래 위치 무시. 가장 위에 위치.
 
 > - relative
 
@@ -30,13 +30,11 @@
       - div, p
       - 높이와 너비 가짐.
 
-
 > - inline: 옆에 다른 요소가 올 수 있음.
 
       - span, a, img
       - 높이와 너비를 가질 수 없음.
       - margin의 위 아래는 가질 수 없음.
-
 
 > - inline-block : inline 문제를 해결, But 반응형 디자인을 지원하지 않음 -> flex 사용
 
