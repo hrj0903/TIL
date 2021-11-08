@@ -27,17 +27,21 @@
 
 ## CSS
 
-- [css 간단 요약](https://github.com/hrj0903/TIL/blob/main/CSS/css-간단-요약.md)
+- [기초 정리](https://github.com/hrj0903/TIL/blob/main/CSS/css-기초-정리.md)
 
-- [advanced css 간단 요약](https://github.com/hrj0903/TIL/blob/main/CSS/advanced-css-간단-요약.md)
+- [레이아웃](https://github.com/hrj0903/TIL/blob/main/CSS/css-layout.md)
 
-- [bem 방식](https://github.com/hrj0903/TIL/blob/main/CSS/bem-방식.md)
-
-- [css hack](https://github.com/hrj0903/TIL/blob/main/CSS/css-hack.md)
-
-- [reset css](https://github.com/hrj0903/TIL/blob/main/CSS/reset-css.md)
+- [반응형 디자인과 미디어 쿼리](https://github.com/hrj0903/TIL/blob/main/CSS/반응형-디자인과-미디어-쿼리.md)
 
 - [fixed와 sticky의 차이](https://github.com/hrj0903/TIL/blob/main/CSS/fixed와-sticky의-차이.md)
+
+- [hack](https://github.com/hrj0903/TIL/blob/main/CSS/css-hack.md)
+
+- [reset](https://github.com/hrj0903/TIL/blob/main/CSS/reset-css.md)
+
+## CSS Architecture
+
+- [bem 방식](https://github.com/hrj0903/TIL/blob/main/CSS/Architecture/bem-방식.md)
 
 ## JavaScript
 
