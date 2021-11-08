@@ -1,550 +1,340 @@
-# CSS
+## 목차
 
-## 1.CSS 란?
+1. [CSS란](#css란)
+2. [CSS 구조](#css-구조)
+3. [Id, Class](#id-class)
+4. [css 단위](#css-단위)
+5. [pseudo selectors](#pseudo-selectors)
+6. [custom properties](#custom-properties)
+7. [transitions](#transitions)
+8. [Transformations](#transformations)
+9. [Animations](#animations)
+10. [z-index](#z-index)
 
-브라우저에게 웹사이트의 content가 ‘어떻게 보여야’ 하는지에 대해 알려주는 디자인 언어이다.
+# CSS란
 
-예를 들어 title의 크기는 얼마인지, link의 색깔은 무엇인지를 CSS를 통해 브라우저에게 알려주는 것이다.
+> Cascading Style Sheets로 사용자에게 문서를 표시하는 방법을 지정하는 언어
 
-## 2.CSS 적용방법
+# CSS 구조
 
-html에 css를 적용하는 방식이 2가지가 있다.
-
-html 파일에 html 코드와 css 코드를 놓는 방법(inline css)과 css와 html을 분리하는 방식(external css)이다.
-
-external css가 더 좋은 방식이다.
-
-분리된 파일이 있으면 다른 많은 html 페이지에서 사용이 가능하고 html코드와 css코드를 따로 봐서 보기에 좋다.
-
-> inline css 적용 방법
-
-```html
-<!DOCTYPE html>
-
-<html lang="ko">
-  <head>
-    <!--style 안에 css 작성 -->
-    <style></style>
-  </head>
-</html>
 ```
-
-> external css 적용 방법
-
-```html
-<!DOCTYPE html>
-
-<html lang="ko">
-  <head>
-    <!--href부분에 css파일 경로 적기-->
-    <link rel="stylesheet" href="#" />
-  </head>
-</html>
-```
-
-## 3.CSS 작성방법
-
-> selector -> 중괄호 -> 그 안에 property, 콜론, value값 작성 -> 세미콜론
-
-```css
-h1 {
-  color: blue;
-  <!-- css 프로퍼티 작성에서 띄어쓰기 하지 않음. 밑줄(_)이나 슬래쉬(/)사용 안됨. -->
-  font-size: 20px;
+selector {
+ property: value;
 }
 ```
 
-브라우저가 CSS를 읽을 때 위에서부터 순서대로 읽는다.
+사용 예제
 
-```css
-h1 {
-  color: blue;
+```
+// 부모(login-form)로부터 색을 상속받는 것
+
+#login-form a {
+color:inherit;
 }
-h2 {
-  color: blue;
+
+// border-top-left-radius처럼 꼭지점 하나를 특정해서 radius를 줄 수 있다.
+
+.message__bubble {
+  background-color: white;
+  padding: 13px;
+  font-size: 18px;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  margin-right: 5px;
+}
+
+// 시간과 말풍선 위치를 바꾸는 방법
+// order는 flex children일 경우만 가능 order 순서대로 앞에 옴. default 값은 0
+// flex children에게 사용할 수 있다. 자식 수가 많으면 어렵다.
+1)
+.message-row--own .message__time {
+order: 0;
+margin-right: 5px;
+}
+.message-row--own .message__bubble {
+order: 1;
+margin-right: 0px;
+}
+
+2) 간단하고 쿨한방법
+.message-row--own .message__info {
+flex-direction: row-reverse;
 }
 ```
 
-같은 selector를 가리키는 CSS가 여러개이면, 가장 마지막 selector가 적용된다.
+# Id, Class
 
-## 4.Blocks and Inlines
+- id
+  - 유일한 고유 식별자
+    - ex) #아이디{ 속성1:속성값; }
+- class - 여러개의 속성들이 공용으로 사용할 수 있는 스타일 형식
+  - ex) .클래스명{ 속성:속성값; }
 
-옆에 다른 요소가 못 오는걸 block, 올 수 있는걸 inline라고 한다. (in the same line)
+# css 단위
 
-대부분이 요소가 block이므로 block이 아닌 종류를 기억하는게 더 편하다.
+viewport(screen) height. 화면크기에 따라 다름.
 
-inline의 대표적인 태그 span, a, img
+100vh = The screen's height
+100vw = The screen's width
+100% = 100% of the PARENT
 
-```css
-html {
-  background-color: tomato;
+# pseudo selectors
+
+> 좀더 세부적으로 엘리먼트를 선택해 주는 것
+
+```
+// id나 class를 따로 만드는것보다 이렇게 지정하는게 좋은 방법.
+// css에서만 선택을 하면 되니까 html코드를 고칠 필요가 없음.
+// first-child, last-child, nth-child(n) 등..
+
+div:first-child {
+property: value;
 }
-body {
-  background-color: thistle;
-}
-div {
-  height: 150px;
-  width: 150px;
-  background-color: whitesmoke;
-}
-span {
-  display: block;
-  background-color: turquoise;
+
+// not은 이것을 제외한 나머지에 적용한다는 뜻.
+
+#login-form input:not([type='submit']) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color, 0.3s ease-in-out;
 }
 ```
 
-display를 작성해서 block을 inline, inline을 block으로 바꿀 수 있다.
+### attribute selectors
 
-block은 높이와 너비가 있고 inline는 높이와 너비가 없다.
+> tag[attribute = "value"] : 속성의 값이 "value"인 태그를 모두적용
+> tag[attribute ~= "value"] : 앞뒤에 공백이 있는 상태에서 "value" 값을 포함한 모든 tag 적용
+> tag[attribute *= "value"] : 앞뒤 공백 상관없이 "value" 값을 포함한 모든 tag 적용
+> tag: required {}: required 속성을 가지고 있는 tag
+> tag: optional {}: required 속성이 없는 tag
 
-즉 block은 box이고 inline은 box가 아니다.
+### combinators
 
-## 5.margin, padding, border, id
-
-```css
-/* * {
-  
-} */
-body {
-  background-color: #ff6446;
-  height: 100vh;
-  margin: 0;
-}
-#box {
-  background: #f5dfb3;
-  padding: 20px;
-  width: 230px;
-  height: 230px;
-  border: 2px solid black;
-}
-
-.box__box {
-  background: #028080;
-  width: 50px;
-  height: 50px;
-}
-
-.box__box--second {
-  width: 200px;
-}
 ```
-
-box에는 특징이 3가지가 있다. margin, padding, border.
-
-브라우저는 원치 않아도 기본적으로 style 속성을 준다. user agent stylesheet : 브라우저가 기본적으로 준 style 속성
-
-margin은 box의 border(경계)의 '바깥'에 있는 공간이다.
-
-collapsing margins 현상 : 어느 box의 경계가 다른 box의 경계와 같다면 이 두 box의 margin은 하나로 취급된다.(위, 아래쪽에서만 일어난다.) - padding을 사용해서 해결하기
-
-padding은 box의 경계로 부터 '안쪽'에 있는 공간이다.
-
-특정 id의 값을 지칭하려면 #id를 이용해 접근한다. 하지만 요즘 class속의 bem작성법으로 인해 잘 쓰지 않는다.
-
-border는 말 그래도 box의 경계이다.
-
-border는 보통 한 종류만 사용한다.(border: 2px solid black; 너비, 스타일(solid만 주로 사용), 색깔)
-
-border는 inline과 block 모두에 적용된다.
-
-'\*'는 '전체'를 뜻한다.
-
-## 6.class, inline block, flex-box
-
-```css
-body {
-  background-color: #ff6446;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.box {
-  background: #f5dfb3;
-  padding: 20px;
-  width: 230px;
-  height: 230px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.box,
-.box__box {
-  border: 2px solid black;
-}
-
-.box__box {
-  background: #028080;
-  width: 50px;
-  height: 50px;
-  border-color: white;
-}
-
-.box__box--second {
-  border-style: dotted;
-  width: 200px;
-}
-```
-
-inline속성인 태그들은 padding은 전부 적용된다.
-
-하지만 inline속성은 높이와 너비가 없이 때문에 margin은 좌우에만 적용된다.
-
-class는 여러개의 속성들이 공용으로 사용할 수 있는 스타일 형식이고, 여러 개의 속성에 같은 스타일을 적용하고 싶을 때 사용한다.
-
-class는 .속성 으로 사용할 수 있으며 class는 여러 개를 가질 수 있다.
-
-inline: width, height 무시돼서 무언가 추가하지 않는 이상 아무것도 안보임
-
-block: 옆에 아무것도 올 수 없음
-
-inline-block: 위 문제를 해결할 수 있어서 좋긴 한데, 반응형 디자인 지원되지 않음(각 기기마다 만족하는 최적값을 일일히 찾아야 함, 그래서 잘 사용하지 않음)
-
-이 문제를 해결할 수 있는게 flexbox
-
-### flexbox 사용 규칙
-
-- 자식 엘리먼트에는 어떤 것도 적지 말아야 함. 자식 엘리먼트를 움직이게 하려면 부모 엘리먼트를 flex container로 만들어야 한다.
-  - justify-content : main axis에서 작용 (가로) (디폴트)
-  - align-items : cross axis에서 작용 (세로)
-- flex-container가 height를 가지고 있지 않으면 align-items를 사용하더라도 위치가 바뀌지 않음.
-  -vh사용 = viewport height (스크린에 따라 다름)
-
-- flex-direction에는 두 가지 속성, column과 row가 있다.
-  - justify-content나 align-items의 default를 변경하기 위해선, 'flex-direction'을 수정하면 된다.
-  - display를 flex로 했을 때 default는 row이다. 따라서 flex-direction: column;을 주면 주축과 교차축이 반전된다.
-- 원하는만큼 flex 부모-자식 엘리먼트를 만들어낼 수 있다.
-- flex-wrap: wrap;을 사용하면 가능한 영역 내에서 벗어나지 않고 여러행으로 나누어 표현 할 함.
-  - flex-wrap: nowrap;을 사용하면 flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
-- flex-direction: column-reverse; 밑에서 시작해서 위로 올라가게 한다.(마찬가지로 row-reverse도 있다.)
-- flex-wrap: wrap-reverse; 또한 있는데, 브라우저를 줄일 때, 엘리먼트가 겹쳐지는 위치가 역전된다.
-
-## 7.position
-
-position default는 static이다.
-
-- fixed
-
-  - element가 처음 생성된 자리에 고정.
-
-  - position fixed를 이용하면 스크롤해도 항상 제자리에 머무른다.
-
-  - top, left, right, bottom 중 하나만 수정해도 서로 다른 레이어에 위치하게되어 원래 위치가 무시된다.
-
-- relative
-
-  - element가 '처음 생성된 위치'를 기준점으로, top bottom left right으로 위치를 조금씩 수정할 수 있다.
-
-- absolute
-
-  - 가장 가까운 relative 부모를 기준으로 이동, position:relative; 를 해주면 부모가 된다. 없으면 body.
-
-## 8.pseudo selectors
-
-좀더 세부적으로 엘리먼트를 선택해 주는 것!
-(기존 방법 : 태그, id w/#, class w/.)
-
-```css
-/* pseudo selector */
-div:last-child {
-  background-color: teal;
-}
-/* id나 class를 따로 만드는것보다 이렇게 지정하는게 훨씬 좋은 방법이다.
-css에서만 선택을 하면 되니까! html코드를 고칠 필요가 없기 때문이다. */
-
-/* n번째 태그 수정하기 nth-child(n) */
-span:nth-child(2) {
-  background-color: teal;
-}
-
-/* even은 짝수! 짝수번째를 모두 바꿀 수 있다. */
-span:nth-child(even) {
-  //or odd ( 홀수 )
-  background-color: teal;
-}
-
-/* n을 사용해서 적용할 수 있다. */
-span:nth-child(5n + 1) {
-  background-color: silver;
-}
-```
-
-- attribute selector
-
-  - tag[attribute = "value"] : 속성의 값이 "value"인 태그를 모두적용
-
-  - tag[attribute ~= "value"] : 앞뒤에 공백이 있는 상태에서 "value" 값을 포함한 모든 tag 적용
-
-  - tag[attribute *= "value"] : 앞뒤 공백 상관없이 "value" 값을 포함한 모든 tag 적용
-
-  - tag[attribute $= "value"]{}: 끝에 "value"가 오는 tag 선택
-
-  - tag[attribute ^= "value"]{}: 앞에 "value"가 오는 tag 선택
-
-  - tag: required {}: required 속성을 가지고있는 tag 적용
-
-## 9.combinators
-
-```css
+// div밑에 있는 모든 span이 효과.
 div span {
-  text-decoration: underline;
+text-decoration : underline;
 }
-```
 
-이렇게하면 div밑에 있는 모든 span이 효과를 가진다.
-
-```css
+// div 바로 밑을 찾게 되므로 바로 밑의 span만 효과
 div > span {
-  text-decoration: underline;
+text-decoration : underline;
 }
-```
 
-이렇게하면 바로 밑을 찾게 되므로 바로 밑의 자식만 건들일수있게된다.
-
-```css
+p 바로 옆에 있는 span에게 효과
 p + span {
-  color: black;
+color: black;
 }
+
+p ~span : p와 같은 부모를 공유하는 모든 span 선택
+
+// 정보: cascading이 위에서 아래로 덮어씌워지지 않을 수 있음. selector끼리는 우선순위대로 동작. 우선순위 계산 사이트 https://specificity.keegan.st/
+
 ```
 
-+를 사용하면 형제에게 영향을 끼칠 수 있다.
+### States
 
-- '>'를 사용하면 direct child를 찾고, '+'를 사용하면 바로 코드상 밑에 있는 sibling을 찾게된다.
+> active
 
-```css
-p ~ span {
-  color: tomato;
-}
-```
+    - 해당 요소를 마우스로 클릭했을 때 효과를 적용
 
-span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
+> hover
 
-## 10.states
+    - 마우스가 해당 요소 위를 지나갈 때 효과를 적용
 
-> :Active, :hover, :focus, :focus-within, :visited
+> focus
 
-- :active
+    - 키보드로 선택되었을 때 효과를 적용
 
-  - 해당 요소를 마우스로 클릭했을 때 효과를 적용
+> focus-within
 
-- :hover
+    - 부모 요소에게 적용. 자신의 자식 요소 중 하나가 focused되었을 때 효과를 적용
 
-  - 마우스가 해당 요소 위를 지나갈 때 효과를 적용
+> visited
 
-- :focus
-
-  - 키보드로 선택되었을 때 효과를 적용
-
-- :focus-within
-
-  - 부모 요소에게 적용. 자신의 자식 요소 중 하나가 focused되었을 때 효과를 적용
-
-- :visited
-
-  - 방문한 사이트일 경우에 효과를 적용.
-
-- :not
-
-  - 이 것을 제외한 나머지에 적용하고 싶어요.
-  - #login-form input 에도 똑같이 쓰면 중복적용됩니다. not쪽에만 써야함
-
-  ```css
-  /* input type이 submit이 아닐때 코드 내용 실행 */
-
-  #login-form input:not([type='submit']) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    transition: border-color 0.3s ease-in-out;
-  }
-  ```
-
-조건을 나열해 여러 상황을 설정할 수 있음.
-
-```css
-예) high-tag:hover low-tag:focus {
-}
-```
-
-상위 요소위에 마우스 커서가 있고, 하위 요소가 focused되었을 때 효과를 적용하게 된다. and 의 개념으로 이해하면 됨.
+    -방문한 사이트일 경우에 효과를 적용
 
 ### pseudo element
 
-- ::placeholder
-  - placehoder만을 꾸밀때 사용
-- ::selection
-- 드래그 했을때 적용
-- ::first-letter
-  - 앞 글자에 적용
-- ::first-line
-  - 첫 줄에 적용
+> :: placeholder
 
-## 11.colors and variables
+    - placeholder의 특성만 바꾸고 싶을 때 사용
 
-- color system
+> :: selection
 
-  - 1)hexadecimal color (16진수 컬러)
-    - #000000
-  - 2)RGB 방식 (이건 디자이너들이 많이씀.)
-    - rgba (205,23,0, 0.5); 4번째 숫자는 투명도를 말한다 !
+    - 클릭해서 드래그 할 때 발생
 
-- custom properties(variable 역할을 해줌)
+> :: first-letter
 
-  :root 라는 엘리먼트에 변수를 추가하는 것이다
-  :root는 기본적으로 모든 document의 뿌리가 되는 것이다
+    - 첫 글자에만 적용
 
-  ```css
-  :root {
-    --main-color: #000000;
-  }
-  ```
+> ::first-line
 
-  --main-color라고 변수이름을 주고 이것을 document의 root에 저장하는것이다
+    - 첫 줄에만 작용
 
-  --를 써주고 변수이름을 써줘야한다 변수는 -- 2개 그리고 변수이름 빈공간이 있다면 -로 채워야한다.
+# custom properties
 
-  물론 컬러만 저장할 수 있는게 아니다.
+:root 라는 엘리먼트에 변수를 추가하는 것
+:root은 기본적으로 모든 document의 출발점
+여기에 변수이름을 쓰고 document의 root에 저장하는것이다
 
-  --default-border: 1px solde var(--main-color);
-
-  그 다음 이 변수를 사용할 곳에 사용해 주면 된다.
-
-  ```css
-  p {
-    background-color: var(--main-color);
-  }
-  a {
-    background-color: var(--main-color);
-  }
-  ```
-
-## web font
-
-- link 보다 import를 추천한다.
-- import위치는 제일 상단
-- body에 font-family 추가
-- 모든 폰트를 추가하면 웹사이트 무거워진다.
-  [Google Fonts](https://fonts.google.com/)
-- styles.css 파일에는 font-family와 같이 모든 스크린에 적용될 수 있는 스타일을 써놓는다.
-  - ( or 모든 스크린의 background-color) 이는 하나의 방식이고, 자신만의 편한 방식을 택하면 된다.
-
-## 팁: 네비게이션 바 하단에 고정하기
-
-position: fixed
-bottom: 0
-width:100%
-box-sizing: border-box
-
-## box-sizing
-
-박스를 우리가 스타일링 할 때 박스 사이즈의 width와 height을 지정할 때 박스 사이징을 content-box로 지정하게 되면 컨텐츠 자체의 width와 height을 결정하기 때문에 우리가 패딩을 얼마나 넣든 보더를 얼마를 넣든 컨테이너 사이즈는 변경되지 않습니다 100x100 그대로 유지
-
-박스를 스타일링 할 때 박스 사이징을 border-box로 만들게 되면 보더까지 포함하도록 만들게되면 width와 height을 100x100으로 지정했을 때 패딩과 보더를 넣은만큼 컨텐트가 작아지는 것을 말함. 그리고 우리가 통상적으로 패딩을 넣는다는 것은 박스 안에 여백을 만드는 것이기 때문에 대부분은 보더박스를 이용해서 사용하게 됨.
-
-## Absolute vs Static
-
-포지션의 기본값은 스태틱이고 스태틱을 했을 때는 top left 이런 포지션 관련된 속성을 써도 아무런 상관이 없고 릴레이티브는 원래 있던 공간은 유지하면서 공간에서 상대적으로 우리가 명시한 top left 이런 값들에 해당 만큼 옮겨가는 것 앱솔루트는 근접한 부모중에 스태틱이 아닌 부모의 기존에 우리가 지정한 값대로 옮겨가는 것
-
-## Sticky vs Fixed
-
-포지션이 static이나 relative나 sticky면 그 안에 들어 있는 그 박스 안에서 변경
-sticky는 바로 포지션이 이동하는 것이 아니라 그 자리에 있다가 스크롤링에 따라 지정된 포지션에 유지
-포지션이 absolute이게 되면 들어있는 근접한 부모 박스들 중에 static 아닌 박스에 위치변경
-fixed면 들어 있는 박스랑 상관없이 그냥 viewport 즉 브라우저에서 보여주는 뷰포트에서 포지션변경
-
-## 중앙정렬
-
-- margin: auto,
-- text-align: center,
-- translate(50%, 50%),
-- (text-align: center, line-height: parents height;)
-
-## 반응형 백그라운드
-
-```css
-background: center/cover no-repeat
-  url('https://media.swncdn.com/cms/BST/67912-gettyimages-817147678-kieferpix.1200w.tn.webp');
 ```
-
-## transformation
-
-```css
-.box1 {
-  transform: translateX(100px);
-}
-
-.box2 {
-  transform: translate(-50px, -20px);
-}
-
-.box3 {
-  transform: scale(1.2);
-}
-
-.box4 {
-  transform: rotate(45deg);
-}
-
-.box5 {
-  transform: translate(100px, 100px) scale(2) rotate(46deg);
-}
-```
-
-## animation
-
-```css
-.box {
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  background-color: pink;
-}
-
-.box1:hover {
-  background-color: blueviolet;
-  transition: background-color 300ms linear;
-}
-
-.box2:hover {
-  border-radius: 50%;
-  background-color: cornflowerblue;
-  transition: all 2s ease;
-}
-
-.box3:hover {
-  border-radius: 50%;
-  transform: translateX(400px);
-  background-color: cornflowerblue;
-  transition: all 3s ease;
-}
-```
-
-## variable
-
-```css
 :root {
-  --background-color: thistle;
-  --text-color: whitesmoke;
-  --base: 8px;
+
 }
-.first-list {
-  background-color: var(--background-color);
-  color: var(--text-color, red);
-  margin-left: var(--base);
+```
+
+변수 작성방법
+
+> --를 써주고 변수이름을 써줘야한다 변수는 -- 2개 그리고 변수이름 빈공간이 있다면 -로 채워야한다.
+
+```
+--default-border: 1px solde var(--main-color);
+```
+
+그 다음 이 변수를 사용할 곳에
+
+```
+p {
+background-color: var(--main-color);
 }
 
-.second-list {
-  background-color: var(--background-color);
-  color: var(--text-color, red);
-  margin-left: calc(var(--base) * 2);
+a {
+background-color: var(--main-color);
+```
+
+# transitions
+
+> 어떤 상태에서 다른 상태로의 변화를 보여주는 애니메이션
+
+transition은 state에 들어있는 property의 값들을 변화시키는 것.
+
+```
+div {
+  width: 500px;
+  height: 500px;
+  color: white;
+  //예시
+  transition: background-color 0.5s ease-in-out, color 20s cubic-bezier(24, 25, 34, 50);
+}
+div:hover {
+  background-color: yellow;
+  color: black;
 }
 
-@media screen and (max-width: 768px) {
-  :root {
-    --background-color: salmon;
-    --text-color: whitesmoke;
-    --base: 4px;
+```
+
+주의점
+
+> state가 없는 요소에 작성해야 한다. state에 transition을 주면 마우스를 땔 경우 바로 원상태로 돌아가서 좋지 않음.
+
+ease-in function - 브라우저에게 변화하는 방법을 알려주는 역할 - 확인해 볼수 있는 사이트: https://matthewlein.com/tools/ceaser
+
+> linear - 변화 그래프가 직선
+> ease-in - 시작과 끝이 빠름
+> ease-out - 시작과 끝이 느림
+> ease-in-out - 시작이 빠르고 끝이 느림
+> cubic-bezier(0, 0, 0, 0); 으로 직접 설정할수도 있다.
+
+# Transformations
+
+> 한 요소를 transform(변형)시킬 수 있다.
+> transformation은 다른 요소의 box element를 변형시키지 않는다. box 차원에서 일어나지 않음.
+> margin, padding이 적용되지 않는다. 일종의 3D transformation이기 때문이다.
+> margin, padding을 위해서 translateX, translateY를 사용하지 않는다.
+> 다른 요소의 box를 변형시키지 않고 원하는 요소를 이동시키기 위해 translate를 사용.
+> transform과 transition을 조합하면 더 역동적인 애니메이션을 만들 수 있다.
+
+```
+img {
+border: 10px solid black;
+border-radius: 50%
+transition: transform 5s ease-in-out;
+}
+
+img:hover{
+transform: rotateX(360deg);
+}
+```
+
+# Animations
+
+마우스 안올리고도 자동으로 재생하는 애니메이션을 만들고 싶으면 animation을 사용
+
+애니메이션 만들기
+
+```
+@keyframes 애니메이션 이름 {
+  from {
+  }
+  to {
   }
 }
+
+```
+
+사용하기
+
+```
+태그 {
+  animation: 애니메이션이름 재생시간 ease-in옵션 infinite;
+}
+```
+
+무한으로 반복되게 하려면 옵션 뒤자리에 infinite를 붙여준다.
+
+from to 말고, 1,2,3,4,5...10 혹은 0% 25% 50% 75% 100% 같이 여러 단계로 나뉘어 애니메이션을 만들 수 있다.
+
+```
+@keyframes 애니메이션 이름 {
+  0% {
+  }
+  50% {
+  }
+  100% {
+  }
+}
+
+//예시
+
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// 애니메이션의 마지막 값을 기억하고 싶다면 forwards라는 단어를 사용해야한다.
+→ 마지막 keyframes를 기억한다.( opacity: 0; visibility: hidden;)
+
+#splah-screen {
+  background-color: var(--blue);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 132px;
+
+  animation: hideSplashScreen 0.4s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+```
+
+> 주의: 일부 property는 애니매이션이 안되는 경우도 있음.
+
+# z-index
+
+z-index 속성은 위치 지정 요소와, 그 자손 또는 하위 플렉스 아이템의 Z축 순서를 지정합니다. 더 큰 z-index 값을 가진 요소가 작은 값의 요소 위를 덮습니다.
+
+```
+// default 값은 auto, 기본값이 0이다 라고 생각하면 됨.
+z-index: auto;
+z-index: 1;
+z-index: 2;
 ```
