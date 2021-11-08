@@ -29,7 +29,7 @@
 
 - [기초 정리](https://github.com/hrj0903/TIL/blob/main/CSS/css-기초-정리.md)
 
-- [레이아웃](https://github.com/hrj0903/TIL/blob/main/CSS/css-layout.md)
+- [레이아웃](https://github.com/hrj0903/TIL/blob/main/CSS/css-레이아웃.md)
 
 - [반응형 디자인과 미디어 쿼리](https://github.com/hrj0903/TIL/blob/main/CSS/반응형-디자인과-미디어-쿼리.md)
 
