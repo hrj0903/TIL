@@ -22,46 +22,49 @@
 
 ## HTML
 
-- [html 간단 요약](https://github.com/hrj0903/TIL/blob/main/HTML/html-간단-요약.md)
-- [og태그](https://github.com/hrj0903/TIL/blob/main/HTML/og태그.md)
+- [html 간단 요약](https://github.com/hrj0903/TIL/blob/main/html/html-간단-요약.md)
+- [og태그](https://github.com/hrj0903/TIL/blob/main/html/og태그.md)
 
 ## CSS
 
-- [기초 정리](https://github.com/hrj0903/TIL/blob/main/CSS/css-기초-정리.md)
+- [기초 정리](https://github.com/hrj0903/TIL/blob/main/css/css-기초-정리.md)
 
-- [레이아웃](https://github.com/hrj0903/TIL/blob/main/CSS/css-레이아웃.md)
+- [레이아웃](https://github.com/hrj0903/TIL/blob/main/css/css-레이아웃.md)
 
-- [반응형 디자인과 미디어 쿼리](https://github.com/hrj0903/TIL/blob/main/CSS/반응형-디자인과-미디어-쿼리.md)
+- [반응형 디자인과 미디어 쿼리](https://github.com/hrj0903/TIL/blob/main/css/반응형-디자인과-미디어-쿼리.md)
 
-- [fixed와 sticky의 차이](https://github.com/hrj0903/TIL/blob/main/CSS/fixed와-sticky의-차이.md)
+- [fixed와 sticky의 차이](https://github.com/hrj0903/TIL/blob/main/css/fixed와-sticky의-차이.md)
 
-- [hack](https://github.com/hrj0903/TIL/blob/main/CSS/css-hack.md)
+- [hack](https://github.com/hrj0903/TIL/blob/main/css/css-hack.md)
 
-- [reset](https://github.com/hrj0903/TIL/blob/main/CSS/reset-css.md)
+- [reset](https://github.com/hrj0903/TIL/blob/main/css/reset-css.md)
 
 ## CSS Architecture
 
-- [bem 방식](https://github.com/hrj0903/TIL/blob/main/CSS/Architecture/bem-방식.md)
+- [bem 방식](https://github.com/hrj0903/TIL/blob/main/css/architecture/bem-방식.md)
 
 ## JavaScript
 
-- [javascript](https://github.com/hrj0903/TIL/blob/main/JavaScript/javascript)
-- [advanced-javascript](https://github.com/hrj0903/TIL/blob/main/JavaScript/advanced-javascript.md)
-- [javascript 간단 요약](https://github.com/hrj0903/TIL/blob/main/JavaScript/javascript-간단-요약.md)
-- [react js](https://github.com/hrj0903/TIL/blob/main/JavaScript/reactjs.md)
+- [javascript](https://github.com/hrj0903/TIL/blob/main/javascript/javascript)
+- [advanced-javascript](https://github.com/hrj0903/TIL/blob/main/javascript/advanced-javascript.md)
+- [javascript 간단 요약](https://github.com/hrj0903/TIL/blob/main/javascript/javascript-간단-요약.md)
+- [react js](https://github.com/hrj0903/TIL/blob/main/javascript/reactjs.md)
 
 ## Markdown
 
 - [markdown 문법](https://github.com/hrj0903/TIL/blob/main/markdown/markdown-문법.md)
 
+## git
+
+- [git 명령어](https://github.com/hrj0903/TIL/blob/main/git/git-명령어.md)
+- [git commit 이름 바꾸기](https://github.com/hrj0903/TIL/blob/main/git/git-commit-이름-바꾸기.md)
+- [git github 간단 요약](https://github.com/hrj0903/TIL/blob/main/git/git-github-기초-정리.md)
+
 ## ETC
 
-- [git github 간단 요약](https://github.com/hrj0903/TIL/blob/main/ETC/Git/git-github-간단-요약.md)
-
-- [vsc-단축키](https://github.com/hrj0903/TIL/blob/main/ETC/vsc-단축키.md)
-
-- [웹도메인 만드는법](https://github.com/hrj0903/TIL/blob/main/ETC/웹도메인-만드는법.md)
-- [터미널 명령어](https://github.com/hrj0903/TIL/blob/main/ETC/터미널-명령어.md)
+- [vsc-단축키](https://github.com/hrj0903/TIL/blob/main/etc/vsc-단축키.md)
+- [웹도메인 만드는법](https://github.com/hrj0903/TIL/blob/main/etc/웹도메인-만드는법.md)
+- [터미널 명령어](https://github.com/hrj0903/TIL/blob/main/etc/터미널-명령어.md)
 
 ## 프로젝트 만들시
 
