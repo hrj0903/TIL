@@ -56,9 +56,9 @@
 
 ## git
 
-- [git 명령어](https://github.com/hrj0903/TIL/blob/main/git/git-명령어.md)
-- [git commit 이름 바꾸기](https://github.com/hrj0903/TIL/blob/main/git/git-commit-이름-바꾸기.md)
-- [git github 간단 요약](https://github.com/hrj0903/TIL/blob/main/git/git-github-기초-정리.md)
+- [명령어](https://github.com/hrj0903/TIL/blob/main/git/명령어.md)
+- [commit 이름 바꾸기](https://github.com/hrj0903/TIL/blob/main/git/commit-이름-바꾸기.md)
+- [git github 기초 정리](https://github.com/hrj0903/TIL/blob/main/git/git-github-기초-정리.md)
 
 ## ETC
 
