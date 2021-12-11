@@ -39,6 +39,8 @@
 
 - [reset](https://github.com/hrj0903/TIL/blob/main/css/reset-css.md)
 
+- [scss](https://github.com/hrj0903/TIL/blob/main/css/scss.md)
+
 ## CSS Architecture
 
 - [bem 방식](https://github.com/hrj0903/TIL/blob/main/css/architecture/bem-방식.md)
