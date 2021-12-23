@@ -53,8 +53,8 @@
 - [javascript 기초 정리](https://github.com/hrj0903/TIL/blob/main/javascript/javascript-기초-정리.md)
 - [react js](https://github.com/hrj0903/TIL/blob/main/javascript/reactjs.md)
 - [client와 offset의 차이](https://github.com/hrj0903/TIL/blob/main/javascript/client와-offset의-차이.md)
-
 - [fetch](https://github.com/hrj0903/TIL/blob/main/javascript/fetch.md)
+- [paint-js](https://github.com/hrj0903/TIL/blob/main/javascript/paint-js.md)
 
 ## Markdown
 
