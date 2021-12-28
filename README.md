@@ -56,6 +56,10 @@
 - [fetch](https://github.com/hrj0903/TIL/blob/main/javascript/fetch.md)
 - [paint-js](https://github.com/hrj0903/TIL/blob/main/javascript/paint-js.md)
 
+## TypeScript
+
+- [typescript](https://github.com/hrj0903/TIL/blob/main/typescript/typescript.md)
+
 ## Markdown
 
 - [markdown 문법](https://github.com/hrj0903/TIL/blob/main/markdown/markdown-문법.md)
