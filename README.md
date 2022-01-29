@@ -41,6 +41,8 @@
 
 - [scss](https://github.com/hrj0903/TIL/blob/main/css/scss.md)
 
+- [@charset "utf-8" 쓰는 이유](https://github.com/hrj0903/TIL/blob/main/css/css에-utf-8-쓰는-이유.md)
+
 ## CSS Architecture
 
 - [bem 방식](https://github.com/hrj0903/TIL/blob/main/css/architecture/bem-방식.md)
