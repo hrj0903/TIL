@@ -1,6 +1,6 @@
 # HTML
 
-## 0.웹개발에 앞서 알아야 할 기본내용
+## 웹개발에 앞서 알아야 할 기본내용
 
 웹사이트는 텍스트 파일로 이루어져 있다.
 
@@ -14,13 +14,56 @@
 
 브라우저는 html 문법을 따르지 않아도 언제나 사용자에게 content를 보여준다.
 
-## 1.HTML 이란
+## HTML 이란
 
 브라우저에게 웹사이트에서 보여줄 content가 ‘무엇’인지 알려주는 마크업 언어이다.
 
 예를 들어 title은 무엇인지, link는 무엇인지, 이미지는 무엇인지를 html을 통해 브라우저에게 알려주는 것이다.
 
-## 2.Tag 란
+## HTML Document
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+```html
+<!DOCTYPE html>
+- html이 올바르게 작동하려면 doctype을 포함해야 합니다.
+
+<html lang="en"></html> 
+- <html>요소는 루트 요소라고도 하는 페이지의 모든 콘텐츠를 래핑. 
+  lang페이지의 언어를 선언하는 속성을 항상 포함
+
+<head></head>
+- 사용자에게 표시하는 콘텐츠는 아님.
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+- 사용자가 익스플로러를 이용한다면 최신 버전인 엣지로 화면을 보여 주는 기능을 합니다.
+
+<meta charset="UTF-8" />
+- 첫 번째 메타 요소는 문자 집합을 문자 집합을 UTF-8로 설정하는 데 사용되며, 여기에는 대부분의 문자가 포함
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+- 두 번째 메타 요소는 브라우저 뷰포트를 지정합니다. 모바일에 최적화된 사이트를 위한 설정
+
+<title>Document</title> 
+- 페이지의 제목을 설정합니다.
+
+<body></body>
+- 페이지의 모든 콘텐츠가 포함
+```
+
+## Tag 란
 
 tag 사이에 있는 content가 무엇인지를 브라우저에게 알려주는 것이다.
 
