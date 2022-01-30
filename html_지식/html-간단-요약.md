@@ -93,6 +93,8 @@ tag 사이에 있는 content가 무엇인지를 브라우저에게 알려주는 
   <a href="https://google.com" target="_blank">구글접속</a>
 
   <img src="#" />
+  <!-- poster는 동영상 플레이어 초기 화면에 보여 줄 이미지를 지정. -->
+  <video src="img/cloud.mp4" poster="img/rose.jpg" controls>
 </html>
 ```
 
