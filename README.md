@@ -43,6 +43,8 @@
 
 - [@charset "utf-8" 쓰는 이유](https://github.com/hrj2233/TIL/blob/main/css_지식/css에-utf-8-쓰는-이유.md)
 
+- [background 속성](https://github.com/hrj2233/TIL/blob/main/css_지식/background-속성.md)
+
 ## CSS Architecture
 
 - [bem 방식](https://github.com/hrj2233/TIL/blob/main/css_지식/architecture/bem-방식.md)
