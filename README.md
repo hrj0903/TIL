@@ -53,6 +53,8 @@
 
 - [gradient 속성](https://github.com/hrj2233/TIL/blob/main/css_지식/gradient-속성.md)
 
+- [filter 속성](https://github.com/hrj2233/TIL/blob/main/css_지식/filter-속성.md)
+
 ## CSS Architecture
 
 - [bem 방식](https://github.com/hrj2233/TIL/blob/main/css_지식/architecture/bem-방식.md)
