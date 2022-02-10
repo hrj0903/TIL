@@ -17,47 +17,19 @@
 
 ## GIT BASICS
 
-- What is the Git command used to get a full copy of an existing Git repository from GitHub?
-  - git clone git@github.com:USER-NAME/REPOSITORY-NAME.git
-  - git clone https://github.com/user-name/repository-name.git
-- What is the Git command used to check the status of your files?
-  - git status
-- What is the Git command used to track files with Git?
-  - git add <파일>
-- What is the Git command used to remove tracked files with Git?
-  - git reset <파일>
-- What is the Git command used to commit files?
-  - git commit -m “<커밋 내용>”
-- What is the Git command used to view your commit history?
-  - git log
-- What is the Git command used to upload projects onto GitHub?
-  - git push origin main
-- Explain the two-stage system that Git uses to save files.
-
-  - git add: 현재 working directory에 있는 모든 또는 일부 변경 내용을 staging area으로 이동
-  - git commit: working directory에 있는 변경 내용은 고려하지 않고, staging area에 넘어온 변경 내용을 repository(local repo)로이동
-
-  - staging area 장점
-  - 스테이징은 하나의 큰 변경 사항을 여러 커밋으로 분할 하는데 도움을 준다.
-  - 스테이징은 변경 검토에 도움이 된다.
-  - 스테이징은 병합에 충돌이 있을 때 도움이 된다.
-  - 스테이징은 여분의 로컬 파일을 계속 유지하는데 도움이 된다.
-  - 스테이징은 작은 변화를 몰래 잠입하는데 도움이 된다.
-  - 출처: https://stackoverflow.com/questions/49228209/whats-the-use-of-the-staging-area-in-git
-
-- Explain what origin is in git push origin main.
-  - 프로젝트가 복제된 원격 저장소의 단축 이름
-- Explain what main is in git push origin main.
-  - git을 push 하고 싶은 원격저장소 브랜치이름이 main
-
-## PROJECT: PRACTICING GIT BASICS
-
 - How do you create a new repository on GitHub?
   - 깃허브 계정에 들어가서 new repository를 클릭하고 저장소 이름을 지정하고 create repository버튼을 클릭한다.
 - How do you copy a repository onto your local machine?
-  - git clone <SSH>
+  - git clone "< ssh 깃리포지토리 주소 >"
 - What is the default name of your remote connection?
   - origin
+- Explain what origin is in git push origin main.
+  - origin은 원격 저장소의 기본값 이름.
+- Explain what main is in git push origin main.
+  - main은 로컬 기본 깃 브랜치 이름.
+- Explain the two-stage system that Git uses to save files.
+  - git add: 현재 working directory에 있는 모든 또는 일부 변경 내용을 staging area으로 이동
+  - git commit: working directory에 있는 변경 내용은 고려하지 않고, staging area에 넘어온 변경 내용을 repository(local repo)로이동
 - How do you check the status of your current repository?
   - git status
 - How do you add files to the staging area in git?
