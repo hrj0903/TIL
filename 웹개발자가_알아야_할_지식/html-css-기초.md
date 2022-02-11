@@ -1,3 +1,49 @@
+# INTRODUCTION TO HTML AND CSS
+
+- What do HTML and CSS stand for?
+  - html은 웹사이트의 구조를 만들고 css는 웹사이트를 꾸밈.
+- Between HTML and CSS, which would you use for putting paragraphs of text on a webpage?
+  - html
+- Between HTML and CSS, which would you use for changing the font and background color of a button?
+  - css
+
+# ELEMENTS AND TAGS
+
+- What is an HTML tag?
+  - html tag는 contents를 감싸는 것.
+- What are the three parts of an HTML element?
+  - opening tag, content, closing tag
+
+# HTML BOILERPLATE
+
+- What is the purpose of the doctype declaration?
+  - 문서를 렌더링하는데 사용해야 하는 html 버전을 브라우저에게 알려줌.
+- What is the HTML element?
+  - 문서의 루트 요소로, 문서의 다른 모든 요소는 해당 문서의 하위 요소.
+- What is the purpose of the head element?
+  - 웹페이지에 대한 중요한 메타 정보와 웹 페이지가 브라우저에서 올바르게 렌더링되는데 필요한 항목을 넣는곳.
+- What is the purpose of the body element?
+  - 텍스트, 이미지, 목록, 링크 등 사용자에게 표시될 모든 콘텐츠를 표시하는 곳.
+
+# WORKING WITH TEXT
+
+- How do you create a paragraph in HTML?
+  - p태그
+- How do you create a heading in HTML?
+  - h1~h6태그
+- How many different levels of headings are there and what is the difference between them?
+  - h1은 가장 중요하고 숫자가 작을수록 글자가 작아지고 중요성 작음.
+- What element should you use to make text bold and important?
+  - strong 태그
+- What element should you use to make text italicized to add emphasis to it?
+  - em 태그
+- What relationship does an element have with any nested elements within it?
+  - parent and child relationship
+- What relationship do two elements have if they are at the same level of nesting?
+  - siblings
+- How do you create HTML comments?
+  - "<!-- -->"
+
 # HTML AND CSS BASICS
 
 - What is the difference between HTML and CSS?
