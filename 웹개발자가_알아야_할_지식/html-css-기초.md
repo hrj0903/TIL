@@ -42,7 +42,7 @@
 - What relationship do two elements have if they are at the same level of nesting?
   - siblings
 - How do you create HTML comments?
-  - "<!-- -->"
+  - 여는 꺽쇠 !-- -- 닫는 꺽쇠
 
 # HTML AND CSS BASICS
 
