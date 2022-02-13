@@ -89,6 +89,36 @@
         -   아이콘, 기술 다이어그램, 로고 등에 적합.
         -   SVG에는 한 가지 잠재적인 문제가 있습니다. SVG가 여러 브라우저에서 일관되게 표시하려면 이미지 편집기(예: Abode Illustrator 또는 Sketch)를 사용하여 텍스트 필드를 윤곽선으로 변환해야 합니다. 이미지에 많은 텍스트가 포함된 경우 파일 크기에 큰 영향을 줄 수 있습니다. 이러한 이유로 SVG가 매우 훌륭함에도 불구하고 SVG 대신 PNG를 사용합니다.
 
+# CSS FOUNDATIONS
+
+-   What are the main differences between external, internal, and inline CSS?
+    -   Inline: html 요소 내에 직접 배치
+    -   Internal: html head 태그내에 <style></style> 에 배치
+    -   External: css 파일을 따로 만들어 head 섹션 내에 링크를 통해 연결
+-   What is the syntax for class and ID selectors?
+    -   html: class="class이름", id="id이름"
+    -   css: .class이름{}, #id이름{}
+-   How would you apply a single rule to two different selectors?
+
+    -   grouping selector
+        `css <!-- 예시 --> .read, .unread { color: white; background-color: black; } `
+
+-   Given an element that has an id of title and a class of primary, how would you use both attributes for a single rule?
+    -   Chaining Selectors
+        `css <!-- 예시 --> .subsection.header { color: red; } `
+-   What does the descendant combinator do?
+
+    -   이전 선택자와 일치하는 조상(부모, 조부모 등)이 있는 경우 마지막 선택자와 일치하는 요소만 선택하도록 합니다.
+
+    ```css
+    <!-- 예시 -->
+    .ancestor .contents {
+    /_ some declarations _/
+    }
+    ```
+
+-   Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?
+
 # HTML AND CSS BASICS
 
 -   What is the difference between HTML and CSS?
@@ -128,11 +158,11 @@
     -   요소의 속성에 어떤 값이 지정되지 않을 때 일어나는 일을 제어
 -   What are two CSS attributes you can change to push an element around on the page?
     -   Margin , padding
--   What are the three different ways to include a CSS stylesheet in your project or use CSS to - - style a particular element?
-    -   Inline: html 요소 내에 직접 배치
-    -   Internal: html head 태그내에 <style></style> 에 배치
-    -   External: css 파일을 따로 만들어 head 섹션 내에 링크를 통해 연결
 -   What is the “default stylesheet” or “user agent stylesheet”?
     -   브라우저에 내장되어 있으며 html 요소에 기본 스타일을 부여하는 css 규칙
 -   What is the purpose of a CSS reset file?
     -   기본 스타일을 무력화 하고 빈 페이지에서 완전히 시작 할 수 있음. 이는 다른 브라우저로 인해 마크업이 다르게 표시 되는 것을 방지하는데 유용.
+
+```
+
+```
