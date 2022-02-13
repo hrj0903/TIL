@@ -101,23 +101,112 @@
 -   How would you apply a single rule to two different selectors?
 
     -   grouping selector
-        `css <!-- 예시 --> .read, .unread { color: white; background-color: black; } `
+
+        ```css
+        .read,
+        .unread {
+        	color: white;
+        	background-color: black;
+        }
+        ```
 
 -   Given an element that has an id of title and a class of primary, how would you use both attributes for a single rule?
     -   Chaining Selectors
-        `css <!-- 예시 --> .subsection.header { color: red; } `
+        ```css
+        .subsection.header {
+        	color: red;
+        }
+        ```
 -   What does the descendant combinator do?
 
     -   이전 선택자와 일치하는 조상(부모, 조부모 등)이 있는 경우 마지막 선택자와 일치하는 요소만 선택하도록 합니다.
 
     ```css
-    <!-- 예시 -->
     .ancestor .contents {
     /_ some declarations _/
     }
     ```
 
 -   Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?
+    -   one class selector
+
+# INSPECTING HTML AND CSS
+
+-   How do you select a specific element on your page with your browser’s developer tools?
+    -   해당 요소에 오른쪽 클릭해서 검사에 들어가면 됨.
+-   What does a strikethrough in a CSS element mean in your browser’s developer tools?
+    -   overwritten
+-   How do you change CSS in real time on specific elements of a web page with your browser’s developer tools?
+    -   개별 선택자나 속성에 직접 추가하면 됨.
+
+# THE BOX MODEL
+
+-   From inside to outside, what is the order of box-model properties?
+    -   padding -> border -> margin
+-   What does the box-sizing CSS property do?
+    -   너비는 페이지에 표시되는 상자의 너비이므로 콘텐츠 영역 너비는 너비에서 패딩 및 테두리 너비를 빼고 계산
+-   What is the difference between the standard and alternative box model?
+    -   standard box model은 실제 크기를 얻기 위해 테두리와 패딩을 추가해야 하는 것
+    -   alternative box model은 모든 너비는 페이지에 표시되는 상자의 너비이므로 콘텐츠 영역 너비는 너비에서 패딩 및 테두리 너비를 뺀 것
+-   Would you use margin or padding to create more space between 2 elements?
+    -   margin
+-   Would you use margin or padding to create more space between the contents of an element and its border?
+    -   padding
+-   Would you use margin or padding if you wanted two elements to overlap each other?
+    -   margin
+
+# BLOCK AND INLINE
+
+-   What is the difference between a block element and an inline element?
+    -   block은 서로 쌓여진 채 나타나며, 각각의 새 요소는 새 줄에서 시작합니다.
+    -   inline은 새 줄에서 시작하지 않고 옆에 요소와 배치하여 나타납니다.
+-   What is the difference between an inline element and an inline-block element?
+    -   inline은 높이와 넓이가 적용되지 않고 패딩 top bottom 적용 안됨.
+    -   inline-block은 높이와 넓이와 패딩이 적용됨. 그리고 inline처럼 새 줄에서 시작하지 않고 옆에 요소와 배치하여 나타남.
+-   Is an h1 block or inline?
+    -   block
+-   Is button block or inline?
+    -   inline
+-   Is div block or inline?
+    -   block
+-   Is span block or inline?
+    -   inline
+
+# INTRODUCTION TO FLEXBOX
+
+-   What’s the difference between a flex container and a flex item?
+    -   flex container는 display: flex가 있는 모든 요소입니다. flex item은 플렉스 컨테이너 내부에 직접 존재하는 모든 요소.
+-   How do you create a flex item?
+    -   flex container에 display:flex를 선언하면 container 안에 있는 요소들은 flex item이 됨.
+
+# GROWING AND SHRINKING
+
+-   What are the 3 values defined in the shorthand flex property (e.g. flex: 1 1 auto)?
+    -   flex-grow, flex-shrink, flex-basis
+
+# AXES
+
+-   How do you make flex items arrange themselves vertically instead of horizontally?
+    -   flex-direction: column;
+-   In a column flex-container, what does flex-basis refer to?
+    -   height
+-   In a row flex-container, what does flex-basis refer to?
+    -   width
+-   Why do the previous two questions have different answers?
+    -   flex-direction: row는 주축을 수평으로(왼쪽에서 오른쪽으로)하기 때문에 basis가 width, column은 주축을 수직으로(위에서 아래로) 배치하기 때문에 basis가 height.
+
+# ALIGNMENT
+
+-   What is the difference between justify-content and align-items?
+    -   justify-content: main axis 항목 정렬
+    -   align-items: cross axis 항목 정렬
+-   How do you use flexbox to completely center a div inside a flex container?
+    -   justify-content:center; align-items:center;
+-   What’s the difference between justify-content: space-between and justify-content: space-around?
+    -   space- between: item이 라인에서 균등하게 분배됨. 첫 번째 item은 시작에 있고 마지막 item은 끝에 있습니다.
+    -   space-around: item은 item 주위에 동일한 공간만큼 균등하게 분배됩니다. 모든 항목의 양쪽에 동일한 공간이 있으므로 시각적으로 공간이 동일하지 않습니다. 첫 번째 항목은 컨테이너 가장자리에 대해 1단위의 공간이 있지만 다음 항목에는 적용되는 자체 간격이 있기 때문에 다음 항목들 사이에는 2단위의 공간이 있습니다.
+
+        <img src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" width="300">
 
 # HTML AND CSS BASICS
 
@@ -162,7 +251,3 @@
     -   브라우저에 내장되어 있으며 html 요소에 기본 스타일을 부여하는 css 규칙
 -   What is the purpose of a CSS reset file?
     -   기본 스타일을 무력화 하고 빈 페이지에서 완전히 시작 할 수 있음. 이는 다른 브라우저로 인해 마크업이 다르게 표시 되는 것을 방지하는데 유용.
-
-```
-
-```
