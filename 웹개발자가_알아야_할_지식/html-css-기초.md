@@ -203,6 +203,7 @@
 -   How do you use flexbox to completely center a div inside a flex container?
     -   justify-content:center; align-items:center;
 -   What’s the difference between justify-content: space-between and justify-content: space-around?
+
     -   space- between: item이 라인에서 균등하게 분배됨. 첫 번째 item은 시작에 있고 마지막 item은 끝에 있습니다.
     -   space-around: item은 item 주위에 동일한 공간만큼 균등하게 분배됩니다. 모든 항목의 양쪽에 동일한 공간이 있으므로 시각적으로 공간이 동일하지 않습니다. 첫 번째 항목은 컨테이너 가장자리에 대해 1단위의 공간이 있지만 다음 항목에는 적용되는 자체 간격이 있기 때문에 다음 항목들 사이에는 2단위의 공간이 있습니다.
 
