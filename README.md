@@ -14,8 +14,6 @@
 - [html css 기초](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/html-css-기초.md)
 - [개발자도구 알아야할 정보](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/개발자도구-알아야할-정보.md)
 - [자바스크립트 기초](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/자바스크립트-기초.md)
-- [문제해결](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/문제해결.md)
-- [에러이해](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/에러이해.md)
 - [DOM 조작](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/DOM-조작.md)
 - [백엔드란](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/백엔드란.md)
 - [API란](https://github.com/hrj2233/TIL/blob/main/웹개발자가_알아야_할_지식/api란.md)
