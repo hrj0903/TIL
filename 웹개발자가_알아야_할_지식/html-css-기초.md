@@ -89,6 +89,13 @@
         -   아이콘, 기술 다이어그램, 로고 등에 적합.
         -   SVG에는 한 가지 잠재적인 문제가 있습니다. SVG가 여러 브라우저에서 일관되게 표시하려면 이미지 편집기(예: Abode Illustrator 또는 Sketch)를 사용하여 텍스트 필드를 윤곽선으로 변환해야 합니다. 이미지에 많은 텍스트가 포함된 경우 파일 크기에 큰 영향을 줄 수 있습니다. 이러한 이유로 SVG가 매우 훌륭함에도 불구하고 SVG 대신 PNG를 사용합니다.
 
+# COMMIT MESSAGES
+
+- What are two benefits of having well-written commit messages and a good commit history?
+    - 동료 개발자(및 실제로 미래의 자신)에게 변경 사항에 대한 컨텍스트를 전달합니다. diff는 무엇이 변경되었는지 알려줄 것이지만 커밋 메시지만이 그 이유를 제대로 알려줄 수 있습니다. 
+    - 몇 달 또는 몇 년 전에 어떤 일이 일어났는지 이해하는 것이 가능할 뿐만 아니라 효율적이기 때문에 중요하다.
+- How many characters should the subject line of your commit message be?
+    - 50자
 # CSS FOUNDATIONS
 
 -   What are the main differences between external, internal, and inline CSS?
